@@ -1,11 +1,14 @@
 import React from 'react';
-import '../style/app.scss';
+import Header from './Header';
+import Body from './Body';
+import Footer from './Footer';
 function App() {
   return (
-    <div>
-      <p className='paragraf'>App</p>
-      
-    </div>
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
   )
 }
 

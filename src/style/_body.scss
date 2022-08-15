@@ -1,0 +1,109 @@
+body {
+    background-color: black;
+    
+}
+
+h1 {
+    color: white;
+    display: inline;
+    padding-left: 20px ;
+}
+
+h2 {
+    color: white; 
+    padding: 10px 30px;
+}
+
+p{
+    color: white;
+    font-size: 26px;
+    max-width: 700px;
+}
+
+
+
+.section {
+    background-image:url('/img/body/zyro-image.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.img-movie-name {
+    margin: 200px 50px 50px;
+    max-width: 500px;
+}
+
+.button {
+    padding: 10px 20px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-width: 0ch;
+    margin: 5px;
+}
+
+.button span{
+    position: relative;
+    top: -7px;
+}
+
+.button-info{
+    background: rgba(255, 255, 255, 0.3);color: #fff;
+}
+
+.button-play{
+    background-color: #fff;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: flex-start;
+    background-color: lightslategray;
+    height: 3px;
+    width: 175px;
+    margin-left: 20%;
+    top: 168px;
+}
+
+.progress {
+    background-color: red;
+    height: 3px;
+    width: 40px;
+}
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+    
+}
+
+.card-img-size{
+    max-width: 295px;
+    object-fit: scale-down;
+}
+
+.most-viewed-img-size{
+    max-width: 145px;
+    object-fit: scale-down;
+}
+
+.most-viewed-span-size{
+    font-size: 280px;
+    color:#000;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-text-stroke: 8px gray;
+}
