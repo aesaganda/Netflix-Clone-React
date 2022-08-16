@@ -1,3 +1,132 @@
-.paragraf {
-    color: red;
+@import "./reset";
+@import "./body";
+@import "./header";
+@import "./footer";
+@import "./font";
+@import "./variables";
+
+@media screen and (max-width: 1700px) {
+  .card .most-viewed-img-size {
+    width: 120px;
+    position: relative;
+    left: -10px;
+  }
+  .card .most-viewed-span-size {
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 1482px) {
+  .card .most-viewed-img-size {
+    width: 100px;
+    position: relative;
+    left: -10px;
+  }
+  .card .most-viewed-span-size {
+    font-size: 150px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .most-viewed {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #navbar-display {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .img-movie-name {
+    width: 300px;
+  }
+
+  .link-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #navbar-display {
+    display: none;
+  }
+
+  #header-right-display {
+    display: none;
+  }
+
+  .img-movie-name {
+    width: 200px;
+  }
+
+  .link-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .content p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  //     .card-img-size{
+  //         width: 150px;
+  //     }
+  //     #navbar-display{
+  //         display: none;
+  //     }
+  //     #header-right-display{
+  //         display: none;
+  //     }
+  //     .img-movie-name{
+  //         width: 180px;
+  //     }
+  //     .img-original-movie-size{
+  //         width: 150px;
+  //     }
+  //     .link-group{
+  //         display: flex;
+  //         flex-wrap: wrap;
+  //     }
+  //     h1 {
+  //         font-size: 20px;
+  //     }
+  //     h2 {
+  //         font-size: 10px;
+  //     }
+  //     .content p {
+  //         font-size: 15px;
+  //     }
+  //     .media-logo img {
+  //         width: 20px;
+  //     }
+}
+
+.style-distance {
+  padding: 0px 50px 20px;
 }
