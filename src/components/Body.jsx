@@ -29,7 +29,7 @@ function Body() {
                         <h2>Netflix'te Populer</h2>
                         
                         <MovieInfoProvider>
-                            <Slider />
+                            <Slider classNameImg={"card-img-size"}  movieDetail={{movieURL:"1", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
                         </MovieInfoProvider>
 
                         {/* <div className="slider">
@@ -54,7 +54,11 @@ function Body() {
 
             <div className="special style-distance">
                 <h2>Melih, İzlemeye Devam Et</h2>
-                <div className="slider">
+                <MovieInfoProvider>
+                    <Slider isActive_bar = {"true"} classNameImg={"card-img-size"} movieDetail={{movieURL:"1", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
+                </MovieInfoProvider>
+                
+                {/* <div className="slider">
                     <img className="arrow" src="../img/body/arrowleft-3@2x.svg" alt="" />
                     <a className="card card1" href="#">
                         <img className="card-img-size" src="../img/body/brooklyn.png" alt="" />
@@ -67,7 +71,8 @@ function Body() {
                             <div className="progress"></div>
                         </div>
                     </a>
-                    <a className="card card3" href="#"><img className="card-img-size" src="../img/body/inanc.png" alt="" />
+                    <a className="card card3" href="#">
+                        <img className="card-img-size" src="../img/body/inanc.png" alt="" />
                         <div className="progress-bar">
                             <div className="progress"></div>
                         </div>
@@ -93,13 +98,13 @@ function Body() {
                         </div>
                     </a>
                     <img className="arrow" src="../img/body/arrowleft@2x.svg" alt="" />
-                </div>
+                </div> */}
             </div>
 
             <div className="agenda style-distance">
                 <h2>Gündemdekiler</h2>
                 <MovieInfoProvider>
-                    <Slider />
+                    <Slider classNameImg={"card-img-size"} movieDetail={{movieURL:"1", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
                 </MovieInfoProvider>
 
 
@@ -119,7 +124,14 @@ function Body() {
 
             <div className="original style-distance">
                 <h2>Netflix Orijinal İçerikleri</h2>
-                <div className="slider">
+                
+                <MovieInfoProvider>
+                    <Slider classNameImg={"img-original-movie-size"} movieDetail={{movieURL:"3", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
+                </MovieInfoProvider>
+                
+                
+                
+                {/* <div className="slider">
                     <img className="arrow" src="../img/body/arrowleft-3@2x.svg" alt="" />
                     <a className="card card1" href="#"><img className="img-original-movie-size" src="../img/body/Anne-with.png" alt="" /></a>
                     <a className="card card2" href="#"><img className="img-original-movie-size" src="../img/body/ginny-17@1x.png" alt="" /></a>
@@ -129,17 +141,23 @@ function Body() {
                     <a className="card card6" href="#"><img className="img-original-movie-size" src="../img/body/tribes.png" alt="" /></a>
                     <a className="card card7" href="#"><img className="img-original-movie-size" src="../img/body/Anne-with.png" alt="" /></a>
                     <img className="arrow" src="../img/body/arrowleft@2x.svg" alt="" />
-                </div>
+                </div> */}
+
+
             </div>
 
             <div className="most-viewed style-distance">
                 <h2>Türkiye'de Bugünün Top 10 Listesi</h2>
-                <div className="slider">
+                <MovieInfoProvider>
+                    <Slider classNameImg={"most-viewed-img-size"} classNameSpan={"most-viewed-span-size"} movieDetail={{movieURL:"2", classNameImg:"most-viewed-img-size", classNameSpan:"most-viewed-span-size"}}/>
+                </MovieInfoProvider>
+
+                {/* <div className="slider">
                     <img className="arrow" src="../img/body/arrowleft-3@2x.svg" alt="left-arrrow" />
-                    <div className="card card1">
+                    <a href ="#" className="card card1">
                         <span className="most-viewed-span-size">1</span>
                         <img className="most-viewed-img-size" src="../img/body/nobetci.png" alt="nobetci-afis" />
-                    </div>
+                    </a>
                     <div className="card card2">
                         <span className="most-viewed-span-size">2</span>
                         <img className="most-viewed-img-size" src="../img/body/gozlerin.png" alt="gozlerinin-ardinda" />
@@ -161,14 +179,14 @@ function Body() {
                         <img className="most-viewed-img-size" src="../img/body/nobetci.png" alt="nobetci" />
                     </div>
                     <img className="arrow" src="../img/body/arrowleft@2x.svg" alt="right-arrow" />
-                </div>
+                </div> */}
             </div>
 
             <div className="watch-again style-distance">
                 <h2>Yeniden İzle</h2>
                 
                 <MovieInfoProvider>
-                    <Slider />
+                    <Slider classNameImg={"card-img-size"} movieDetail={{movieURL:"1", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
                 </MovieInfoProvider>
                 
                 {/* <div className="slider">
@@ -186,9 +204,8 @@ function Body() {
 
             <div className="my-list style-distance">
                 <h2>Listem</h2>
-                
                 <MovieInfoProvider>
-                    <Slider />
+                    <Slider classNameImg={"card-img-size"} movieDetail={{movieURL:"1", classNameImg:"img-original-movie-size",classNameSpan:""}}/>
                 </MovieInfoProvider>
                 
                 {/* <div className="slider">
