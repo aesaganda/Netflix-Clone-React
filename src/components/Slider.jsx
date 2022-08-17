@@ -4,14 +4,14 @@ import { useMovieInfo } from "../context/MovieInfoContext";
 import Carousel from "better-react-carousel";
 
 function Slider({ isActive_bar, movieDetail }) {
-  const { moviesStandart, moviesOriginal, moviesMostViewed } = useMovieInfo();
+  const { moviesStandart, moviesOriginal, moviesMostViewed, moviesInfo } = useMovieInfo();
 let movies;
-  switch (movieDetail.movieURL) {
+  switch (movieDetail.movieURL) { 
     case "1":
         movies = moviesStandart;
       break;
     case "2":
-        movies = moviesMostViewed;
+        movies = moviesMostViewed; //moviesInfo[2]
       break;
     case "3":
         movies = moviesOriginal;

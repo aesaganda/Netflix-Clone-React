@@ -1,8 +1,12 @@
-import React, { createContext } from "react";
-import { useContext } from "react";
+import axios from "axios";
+import React, { createContext, useEffect } from "react";
+import { useContext,useState } from "react";
+
 
 const MovieInfoContext = createContext();
 
+
+//*******************************!
 const moviesStandart = [
   {
     movieId: 1,
@@ -126,10 +130,65 @@ const movies = {
   moviesOriginal,
   moviesMostViewed,
 };
+//*******************************!
+
+
+const getMoviesMostViewed = () => {
+  return new Promise(async (resolve, reject) => {
+      const movies = await axios(
+        "https://api.themoviedb.org/3/movie/popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=1"
+      );
+      if (movies) {
+          resolve(movies.data.results);
+      } else {
+          reject("bir problem oldu.");
+      }
+  });
+};
+
+const getMoviesOriginal = () => {
+  return new Promise(async (resolve, reject) => {
+      const movies = await axios(
+        "https://api.themoviedb.org/3/movie/popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=3"
+      );
+      if (movies) {
+          resolve(movies.data.results);
+      } else {
+          reject("bir problem oldu.");
+      }
+  });
+};
+const getMoviesStandart = () => {
+  return new Promise(async (resolve, reject) => {
+      const movies = await axios(
+        "https://api.themoviedb.org/3/movie/popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=2"
+      );
+      if (movies) {
+          resolve(movies.data.results);
+      } else {
+          reject("bir problem oldu.");
+      }
+  });
+};
 
 export const MovieInfoProvider = ({ children }) => {
+  const [moviesInfo,setMoviesInfo] = useState([]);
+
+  useEffect (() => {
+    (async () => {
+          try {
+              const mostViewed = await getMoviesMostViewed();
+              const original = await getMoviesOriginal();
+              const standart = await getMoviesStandart();
+              setMoviesInfo([standart,original,mostViewed])
+          } catch (e) {
+              console.log("ERROR : ", e)
+          }
+      })();
+  },[])
+  console.log(moviesInfo);
   return (
-    <MovieInfoContext.Provider value={movies}>
+    <MovieInfoContext.Provider value={movies} newValue={moviesInfo}>
       {children}
     </MovieInfoContext.Provider>
   );

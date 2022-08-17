@@ -3,6 +3,7 @@ import React from 'react'
 function Card({movie, movieDetail}) {
     // const classNameA = `card card${movie.movieId}`;
     const classNameA = `card`;
+    const movieImg = `https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`;
   return (
     <>
         <a className={classNameA} href="#">
