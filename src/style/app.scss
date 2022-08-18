@@ -7,12 +7,12 @@
 
 @media screen and (max-width: 1700px) {
   .card .most-viewed-img-size {
-    width: 120px;
+    width: 100px;
     position: relative;
     left: -10px;
   }
-  .card .most-viewed-span-size {
-    font-size: 200px;
+  .most-viewed {
+    display: none;
   }
 }
 
@@ -28,9 +28,7 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .most-viewed {
-    display: none;
-  }
+  
 }
 
 @media screen and (max-width: 900px) {
