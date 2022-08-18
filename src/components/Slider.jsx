@@ -1,43 +1,29 @@
 import React from "react";
 import Card from "./Card";
-import { useMovieInfo } from "../context/MovieInfoContext";
 import Carousel from "better-react-carousel";
 
-function Slider({ isActive_bar, movieDetail }) {
-  const { moviesStandart, moviesOriginal, moviesMostViewed, moviesInfo } = useMovieInfo();
-let movies;
-  switch (movieDetail.movieURL) { 
-    case "1":
-        movies = moviesStandart;
-      break;
-    case "2":
-        movies = moviesMostViewed; //moviesInfo[2]
-      break;
-    case "3":
-        movies = moviesOriginal;
-      break;
-
-    default:
-      console.log("Url degeri eslesmedi.");
-      break;
-  }
-
-
+function Slider({ isActive_bar, movieDetail, moviesInfo }) {
+  let movies = moviesInfo[movieDetail.movieURL];
   return (
     <>
       <div className="slider">
-        <Carousel cols={5} rows={1} gap={10}>
-          {movies.map((movie) => {
-            return (
-              <Carousel.Item key={movie.movieId}>
-                <Card
-                  movie={movie}
-                  isActive_bar={isActive_bar}
-                  movieDetail={movieDetail}
-                />
-              </Carousel.Item>
-            );
-          })}
+        <Carousel cols={6} rows={1} gap={1} loop>
+          {
+            movies && 
+            movies.map((movie,item) => {
+
+              return (
+                <Carousel.Item key={item}>
+                  <Card
+                    movie={movie}
+                    isActive_bar={isActive_bar}
+                    movieDetail={movieDetail}
+                    item = {item}
+                  />
+                </Carousel.Item>
+              );
+            })
+          }
         </Carousel>
       </div>
     </>

@@ -1,26 +1,38 @@
-import React from 'react'
 import axios from "axios";
-import { useState, useEffect } from "react";
+import React from "react";
+import Body from "../components/Body";
+import { useEffect, useState } from "react";
 
+const movieBaseURL = "https://api.themoviedb.org/3/movie/";
+const mostViewedURL = `${movieBaseURL}popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=3`;
+const standartURL = `${movieBaseURL}popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=3`;
+const originalURl = `${movieBaseURL}popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=3`;
+
+function getMovies(url) {
+    return axios.get(url);
+}
 function MovieApi() {
-    const [movie, setMovie] = useState([]);
-
+    const [moviesInfo, setMoviesInfo] = useState([]);
     useEffect(() => {
-        async (() => {
-            var movie1 = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=274c12e6e2e4f9ca265a01d107280eba&language=en-US&page=1");
-            console.log("movie:", movie1.data.results);
-            const movies = movie1.data.results;
-            console.log(movie[0].title);
-            setMovie([movies]);
+        (async () => {
+            try {
+                const mostViewedMovies = await (await getMovies(mostViewedURL)).data.results;
+                const originalMovies = await (await getMovies(originalURl)).data.results;
+                const standartMovies = await (await getMovies(standartURL)).data.results;
+                setMoviesInfo([standartMovies, originalMovies, mostViewedMovies]);
+            } catch (e) {
+                console.log("ERROR : ", e);
+            }
         })();
-    },[]);
+    }, []);
+    
+    console.log(moviesInfo);
 
-    return (
+        return (
         <>
-            <p style={{color:"white"}}>movie[0].title</p>
+            <Body />
         </>
-    )
-
+    );
 }
 
-export default MovieApi
+export default MovieApi;
