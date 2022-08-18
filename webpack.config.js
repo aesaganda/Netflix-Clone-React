@@ -37,7 +37,7 @@ module.exports = {
     },
     devtool: "eval-cheap-module-source-map",
     plugins: [
-        new HtmlWebpackPlugin({ title: "Webpack & React App", template: path.resolve(__dirname, './src/index.html') })
+        new HtmlWebpackPlugin({ title: "Netflix Türkiye - TV Programlarını Çevrimiçi İzleyin, Filmleri Çevrimiçi İzleyin", template: path.resolve(__dirname, './src/index.html') })
     ],
     devServer: {
         static: './',
