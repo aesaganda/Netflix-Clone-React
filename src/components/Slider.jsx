@@ -1,9 +1,13 @@
 import React from "react";
 import Card from "./Card";
+import {MovieContext,useContext} from "../context/MovieContext";
 import Carousel from "better-react-carousel";
 
-function Slider({ isActive_bar, movieDetail, moviesInfo }) {
+function Slider({ isActive_bar, movieDetail }) {
+  
+  const {moviesInfo} = useContext(MovieContext);
   let movies = moviesInfo[movieDetail.movieURL];
+
   return (
     <>
       <div className="slider">
