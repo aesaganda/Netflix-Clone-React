@@ -1,0 +1,84 @@
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modalContainer {
+  width: 600px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: rgb(29, 27, 27);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px 10px 10px 15px;
+  }
+
+  .contentImg {
+    img {
+      max-width: 250px;
+      object-fit: cover;
+    }
+
+    padding-bottom: 5px;
+  }
+
+  .description {
+    font-size: 15px;
+    padding: 0px 10px 10px 15px;
+  }
+
+  .subDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 17px;
+    padding: 0px 10px 10px 15px;
+
+  }
+  .avarage {
+    color: crimson;
+  }
+
+  .likeButton {
+    padding: 5px;
+    max-height: 30px;
+    max-width: 30px;
+    img{
+      object-fit: cover;
+    }
+  }
+}
