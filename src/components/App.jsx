@@ -1,11 +1,16 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from "./Modal";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Modal from "./Modal";
 import HomePage from "../Pages/HomePage";
 import {MovieContext} from "../context/MovieContext";
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from "../Pages/LoginPage";
+import PopularActors from '../Pages/PopularActors';
+import MoviePage from '../Pages/MoviePage';
+import MyList from '../Pages/MyList';
 
 const movieBaseURL = "https://api.themoviedb.org/3/movie/";
 const popularURL = `${movieBaseURL}popular?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
@@ -38,11 +43,17 @@ function App() {
   return (
     <>
       {modalOpen && <Modal setOpenModal={setModalOpen} movieDetail={movieDetail}/>}
-      <Header />
       <MovieContext.Provider value={data}>
-        <HomePage />
-      </MovieContext.Provider>
+        <Header />
+      <Routes>
+              <Route path="/" element={< HomePage />} />
+              <Route path="/movies-series" element={< MoviePage />} />
+              <Route path="/popular-actors" element={< PopularActors />} />
+              <Route path="/my-list" element={< MyList />} />
+              <Route path="/login" element={< LoginPage />} />
+      </Routes>
       <Footer />
+      </MovieContext.Provider>
     </>
   )
 }
