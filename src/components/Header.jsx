@@ -23,7 +23,7 @@ function Header() {
               <Link to="/popular-actors">Popüler Oyuncular</Link>
             </div>
             <div class="navbar-link-myList text-white">
-              <Link to="/login">Listem</Link>
+              <Link to="/my-list">Listem</Link>
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
-import Body from "../components/Body";
+import HomeBody from "../components/HomeBody";
 
 function HomePage() {
     return (
         <>
-            <Body/>
+            <HomeBody/>
         </>
     );
 }
