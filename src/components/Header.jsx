@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -10,41 +11,41 @@ function Header() {
           </div>
           <div className='navbar' id="navbar-display">
             <div class="navbar-link-homepage text-white">
-              <a href="#">Ana Sayfa</a>
+              <Link to="/">Ana Sayfa</Link>
             </div>
             <div class="navbar-link-series text-white">
-              <a href="#">Diziler</a>
+              <Link to="/movies-series">Diziler</Link>
             </div>
             <div class="navbar-link-movies text-white">
-              <a href="#">Filmler</a>
+              <Link to="/movies-series">Filmler</Link>
             </div>
             <div class="navbar-link-popular">
-              <a href="#">Yeni ve Popüler</a>
+              <Link to="/popular-actors">Popüler Oyuncular</Link>
             </div>
             <div class="navbar-link-myList text-white">
-              <a href="#">Listem</a>
+              <Link to="/login">Listem</Link>
             </div>
           </div>
         </div>
         {/* <!-- * header-left-end  -->*/}
         <div className='header-right' id="header-right-display">
           <div class="search-button">
-            <a href="#"><img src="../img/header/search@2x.svg" alt="search-button"/></a>
+            <a href="#"><img src="../img/header/search@2x.svg" alt="search-button" /></a>
           </div>
           <div class="child">
             <a href="#">ÇOCUK</a>
           </div>
           <div class="giftbox">
-            <a href="#"><img src="../img/header/giftbox@2x.svg" alt="giftbox"/></a>
+            <a href="#"><img src="../img/header/giftbox@2x.svg" alt="giftbox" /></a>
           </div>
           <div class="notificationbell">
-            <a href="#"><img src="../img/header/notificationbell@2x.svg" alt="notification-bell"/></a>
+            <a href="#"><img src="../img/header/notificationbell@2x.svg" alt="notification-bell" /></a>
           </div>
           <div class="profile">
-            <a href="#"><img style={{width: "25px"}} src="../img/header/profileimg@2x.png" alt="profile"/></a>
+            <a href="#"><img style={{ width: "25px" }} src="../img/header/profileimg@2x.png" alt="profile" /></a>
           </div>
           <div class="down-bar">
-            <a href="#"><img src="../img/header/downarrow@2x.svg" alt="down-bar"/></a>
+            <a href="#"><img src="../img/header/downarrow@2x.svg" alt="down-bar" /></a>
           </div>
         </div>
         {/* <!-- * header-right-end  --> */}

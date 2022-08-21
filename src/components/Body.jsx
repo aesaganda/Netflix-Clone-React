@@ -26,30 +26,30 @@ function Body() {
                     </div>
                     <div className="popular style-distance">
                         <h2>Netflix'te Populer</h2>
-                        <Slider movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
+                        <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
                     </div>
                 </div>
             </div>
             {/* <!-- *  SECTION-main-end--> */}
             <div className="special style-distance">
                 <h2>Melih, İzlemeye Devam Et</h2>
-                <Slider isActive_bar={"true"} movieDetail={{ movieURL: 3, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
+                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 3, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
             </div>
             <div className="agenda style-distance">
                 <h2>En Çok Oy Alanlar</h2>
-                <Slider movieDetail={{ movieURL: 1, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
+                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 1, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
             </div>
             <div className="original style-distance">
                 <h2>Yakın Zamanda Netflix'te</h2>
-                <Slider movieDetail={{ movieURL: 2, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
+                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 2, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
             </div>
             <div className="most-viewed style-distance">
-                <h2>Türkiye'de Bugünün Top 10 Listesi</h2>
-                <Slider movieDetail={{ movieURL: 3, classNameImg: "most-viewed-img-size", classNameSpan: "most-viewed-span-size" }}/>
+                <h2>Top 20 Listesi</h2>
+                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 3, classNameImg: "most-viewed-img-size", classNameSpan: "most-viewed-span-size" }}/>
             </div>
             <div className="watch-again style-distance">
                 <h2>Yeniden İzle</h2>
-                <Slider movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size"}}/>
+                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size"}}/>
             </div>
         </>
     )
