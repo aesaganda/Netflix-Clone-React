@@ -1,15 +1,8 @@
 import React from 'react'
 import ActorCard from '../components/ActorCard';
 
-
-
-
-
 function ActorBody({data}) {
  const  actors = data.pop();
-  
-    console.log(actors);
-
   return (
     <>
         <div className='main-actors-list'>

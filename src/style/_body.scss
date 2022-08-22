@@ -114,6 +114,7 @@ a:active {
 }
 
 a {
+    text-decoration: none;
     color: #000;
 }
 
@@ -156,3 +157,8 @@ a {
         }
     }
 }
+
+Link {
+    text-decoration: none;
+}
+

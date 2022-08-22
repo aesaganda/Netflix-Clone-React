@@ -11,6 +11,12 @@ import LoginPage from "../Pages/LoginPage";
 import PopularActors from '../Pages/PopularActors';
 import MoviePage from '../Pages/MoviePage';
 import MyList from '../Pages/MyList';
+import ActorInfoPage from '../Pages/ActorInfoPage';
+import { ActorContext } from '../context/ActorContext';
+// import 'dotenv/config' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+
+
+// console.log(process.env.REACT_APP_API_KEY);
 
 const movieBaseURL = "https://api.themoviedb.org/3/movie/";
 const popularURL = `${movieBaseURL}popular?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
@@ -18,13 +24,12 @@ const topRatedURL = `${movieBaseURL}top_rated?api_key=36a5061485b27e94b39f5b1cdc
 const upComingURL = `${movieBaseURL}upcoming?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 const nowPlayingURL = `${movieBaseURL}now_playing?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 
-
 function App() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [movieDetail,setMovieDetail] = useState({});
   const [moviesInfo,setMoviesInfo] = useState([]);
-
+  const [actorId,setActorId] = useState(0);
     
   useEffect (() => {
       (async () => {
@@ -41,19 +46,26 @@ function App() {
         setMovieDetail,
         moviesInfo,
       }
+      const actorID = {
+        actorId,
+        setActorId
+      }
 
   return (
     <>
       {modalOpen && <Modal setOpenModal={setModalOpen} movieDetail={movieDetail}/>}
       <MovieContext.Provider value={data}>
+        <ActorContext.Provider value={actorID}>
         <Header />
       <Routes>
               <Route path="/" element={< HomePage />} />
               <Route path="/movies-series" element={< MoviePage />} />
-              <Route path="/popular-actors" element={< PopularActors />} />
+                <Route path="/popular-actors" element={< PopularActors />} />
+                <Route path='/popular-actors/actor-name' element={<ActorInfoPage />}/>
               <Route path="/my-list" element={< MyList />} />
               <Route path="/login" element={< LoginPage />} />
       </Routes>
+              </ActorContext.Provider>
       </MovieContext.Provider>
       <Footer />
     </>

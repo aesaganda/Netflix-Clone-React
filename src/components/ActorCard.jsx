@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { ActorContext } from '../context/ActorContext';
 
 const baseProfileURL = "https://www.themoviedb.org/t/p/w470_and_h470_face";
 
 function ActorCard({ actor, item }) {
+  const {setActorId} = useContext(ActorContext);
+
   return (
-    <>
-      <div href="" key={item} className="actor-card">
-        <img src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
-        <h3>{actor.name}</h3>
+    <>  
+      <div key={item} className="actor-card" onClick={() => {
+      setActorId(actor.id)
+    }}>
+        <Link to={`/popular-actors/actor-name`}>
+          <img src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
+          <h3>{actor.name}</h3>
+        </Link>
+        
       </div>
     </>
   )
