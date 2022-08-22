@@ -41,14 +41,6 @@ function Modal({ setOpenModal, movieDetail }) {
         </div>
 
         <div className="footer">
-          {/* <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Kapat
-          </button> */}
           <button className="button button-play" onclick="location.href='#';" style={{ cursor: "pointer" }}>
             <img src="../img/body/play@2x.svg" alt="play" />
             <span>Oynat</span>
