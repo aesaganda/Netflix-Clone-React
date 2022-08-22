@@ -121,4 +121,38 @@ a {
     -ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
      transform: scale(1.05); 
-   }
+}
+
+.main-actors-list {
+    .title{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    h3{
+        padding-top: 5px;
+        color:white;
+    }
+    
+    
+    .sub-actor-list {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        margin: auto;
+        
+        .actor-card{
+            background-color:rgba(206, 55, 0, 0.8);
+            padding: 2px;
+            margin: 5px;
+            width: 240px;
+            height: 280px;
+            text-align: center;
+
+            img {
+                max-width: 240px;
+                object-fit: cover;
+            }
+        }
+    }
+}

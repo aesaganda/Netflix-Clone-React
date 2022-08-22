@@ -18,11 +18,13 @@ const topRatedURL = `${movieBaseURL}top_rated?api_key=36a5061485b27e94b39f5b1cdc
 const upComingURL = `${movieBaseURL}upcoming?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 const nowPlayingURL = `${movieBaseURL}now_playing?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 
+
 function App() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [movieDetail,setMovieDetail] = useState({});
   const [moviesInfo,setMoviesInfo] = useState([]);
+
     
   useEffect (() => {
       (async () => {
@@ -37,7 +39,7 @@ function App() {
       const data = {
         setModalOpen,
         setMovieDetail,
-        moviesInfo
+        moviesInfo,
       }
 
   return (
@@ -52,8 +54,8 @@ function App() {
               <Route path="/my-list" element={< MyList />} />
               <Route path="/login" element={< LoginPage />} />
       </Routes>
-      <Footer />
       </MovieContext.Provider>
+      <Footer />
     </>
   )
 }
