@@ -65,12 +65,12 @@
       font-size: 14px;
       font-weight: bold;
     }
-    .contentImg {
-      img{
-        max-width: 150px;
-        object-fit:cover;
-      }
-    }
+    // .contentImg {
+    //   img{
+    //     max-width: 150px;
+    //     object-fit:cover;
+    //   }
+    // }
     .description {
       font-size: 9px;
       padding: 0px 10px 10px 10px;
@@ -113,6 +113,10 @@
   .content p {
     font-size: 20px;
   }
+
+  // .actor-info-section, .actor-img-section {
+  //   flex: 100%;
+  // }
 }
 
 @media screen and (max-width: 300px) {

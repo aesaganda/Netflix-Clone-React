@@ -11,9 +11,13 @@ function ActorCard({ actor, item }) {
     <>  
       <div key={item} className="actor-card" onClick={() => {
       setActorId(actor.id)
+      localStorage.setItem("actorId",actor.id);
     }}>
         <Link to={`/popular-actors/actor-name`}>
-          <img src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
+          {
+            actor.profile_path &&
+            <img className='profile-photo' src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
+          }
           <h3>{actor.name}</h3>
         </Link>
         
