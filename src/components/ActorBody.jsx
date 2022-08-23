@@ -1,9 +1,13 @@
 import React from 'react'
 import ActorCard from '../components/ActorCard';
+import { MovieContext, useContext } from '../context/MovieContext';
 
 function ActorBody({data}) {
- const  actors = data.pop();
+//  const  actors = data.pop();
+ const {actorsInfo} = useContext(MovieContext);
+
   return (
+
     <>
         <div className='main-actors-list'>
         <div className='title'>
@@ -11,8 +15,8 @@ function ActorBody({data}) {
         </div>
         <div className='sub-actor-list'>
           {
-            actors &&
-            actors.map((actor, item) => {
+            actorsInfo &&
+            actorsInfo.map((actor, item) => {
               return (
                 <ActorCard actor={actor} item={item} />
               );

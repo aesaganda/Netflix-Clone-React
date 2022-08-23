@@ -23,6 +23,7 @@ const popularURL = `${movieBaseURL}popular?api_key=36a5061485b27e94b39f5b1cdc2a9
 const topRatedURL = `${movieBaseURL}top_rated?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 const upComingURL = `${movieBaseURL}upcoming?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
 const nowPlayingURL = `${movieBaseURL}now_playing?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
+const actorURL = "https://api.themoviedb.org/3/person/popular?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1";
 
 function App() {
 
@@ -30,13 +31,18 @@ function App() {
   const [movieDetail,setMovieDetail] = useState({});
   const [moviesInfo,setMoviesInfo] = useState([]);
   const [actorId,setActorId] = useState(0);
-    
+  const [actorsInfo, setActorsInfo] = useState([]);
+  const [actorKnownWorks,setActorKnownWorks] = useState([]);
+
+
   useEffect (() => {
       (async () => {
           const { data : popular } = await axios(popularURL);
           const { data : topRated } = await axios(topRatedURL);
           const { data : upComing } = await axios(upComingURL);
           const { data : nowPlaying } = await axios(nowPlayingURL);
+          const { data : actors } = await axios(actorURL);
+          setActorsInfo(actors.results);
           setMoviesInfo([popular.results, topRated.results, upComing.results, nowPlaying.results]);
       })();
   },[]);
@@ -45,10 +51,13 @@ function App() {
         setModalOpen,
         setMovieDetail,
         moviesInfo,
+        actorsInfo,
       }
       const actorID = {
         actorId,
-        setActorId
+        setActorId,
+        actorKnownWorks,
+        setActorKnownWorks,
       }
 
   return (

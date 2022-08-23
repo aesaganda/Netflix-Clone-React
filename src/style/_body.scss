@@ -1,20 +1,24 @@
 body {
     background-color: black;
-    
+
 }
 
 h1 {
     color: white;
     display: inline;
-    padding-left: 20px ;
+    padding-left: 20px;
 }
 
 h2 {
-    color: white; 
+    color: white;
     padding: 10px 30px;
 }
 
-p{
+h3 {
+    color: #fff;
+}
+
+p {
     color: white;
     font-size: 26px;
     max-width: 700px;
@@ -51,12 +55,12 @@ p{
     top: -7px;
 }
 
-.button-info{
+.button-info {
     background: rgba(255, 255, 255, 0.3);
     color: #fff;
 }
 
-.button-play{
+.button-play {
     background-color: #fff;
 }
 
@@ -76,22 +80,22 @@ p{
     width: 40px;
 }
 
-.slider{
+.slider {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
 }
 
-.card{
+.card {
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
     max-width: 100%;
-    height: auto;  
+    height: auto;
 }
 
-.most-viewed-img-size{
+.most-viewed-img-size {
     max-width: 250px;
     object-fit: scale-down;
 }
@@ -109,7 +113,7 @@ p{
 // }
 
 a:active {
-    color:#000;
+    color: #000;
 
 }
 
@@ -119,40 +123,46 @@ a {
 }
 
 .card img:hover {
-    -ms-transform: scale(1.05); /* IE 9 */
-    -webkit-transform: scale(1.05); /* Safari 3-8 */
-     transform: scale(1.05); 
+    -ms-transform: scale(1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05);
+    /* Safari 3-8 */
+    transform: scale(1.05);
 }
 
 .main-actors-list {
-    .title{
+    .title {
         text-align: center;
         padding-bottom: 10px;
     }
-    h3{
+
+    h3 {
         padding-top: 5px;
-        color:white;
+        color: white;
     }
-    
-    
+
+
     .sub-actor-list {
-        display:flex;
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content:center;
+        justify-content: center;
         margin: auto;
-        
-        .actor-card{
-            background-color:rgba(206, 55, 0, 0.8);
+
+        .actor-card {
+            background-color: rgba(229, 9, 20, 0.7);
             padding: 2px;
             margin: 5px;
             width: 240px;
             height: 280px;
             text-align: center;
 
-            img {
+            .profile-photo {
                 max-width: 240px;
                 object-fit: cover;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -162,3 +172,103 @@ Link {
     text-decoration: none;
 }
 
+.actor-main {
+
+    .actor-wrapper {
+        padding: 3%;
+        margin: auto;
+        
+        .actor-column {
+            border-color: rgba(229, 9, 20, 0.7) ;
+            border-style: groove;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 3%;
+        }
+
+        .actor-img-section {
+            background-color:rgba(229, 9, 20, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 300px;
+            min-width: 160px;
+            flex: 30%;
+
+            .social-media-logo{
+
+                padding: 5%;
+                img{
+                    margin: 5%;
+                    width: 15%;
+                }
+
+            }
+            .personal-information {
+                margin: 5%;
+                padding: 5%;
+
+                .personal-information-element {
+                    margin: 5%;
+
+                    .title-h3 {
+                        color: white;
+                        display: block;
+                        font-size: 20px;
+                        font-style: italic, bold;
+                        margin: 1%;
+                    }
+
+                    .information-element-span {
+                        color: white;
+                        display: block;
+                        font-size: 15px;
+                    }
+
+                }
+            }
+
+            .actor-img {
+                img {
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                    object-fit: cover;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        .actor-info-section {
+            color: white;
+            flex: 70%;
+            min-width: 160px;
+            max-width: 1500px;
+            .actor-name {
+                margin: 5%; 
+                font-size: 30px;
+            }
+            .actor-biography {
+                margin: 5%;
+                font-size: 20px;
+            }
+            .actor-known-job {
+                text-align: center;
+                font-size: 25px;
+                margin: auto;
+                max-width: 800px;
+            }
+        }
+    }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

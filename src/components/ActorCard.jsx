@@ -5,15 +5,20 @@ import { ActorContext } from '../context/ActorContext';
 const baseProfileURL = "https://www.themoviedb.org/t/p/w470_and_h470_face";
 
 function ActorCard({ actor, item }) {
-  const {setActorId} = useContext(ActorContext);
-
+  const {setActorId,setActorKnownWorks} = useContext(ActorContext);
+  
   return (
     <>  
       <div key={item} className="actor-card" onClick={() => {
-      setActorId(actor.id)
+        setActorId(actor.id)
+        setActorKnownWorks(actor.known_for);
+      // localStorage.setItem("actorId",actor.id);
     }}>
         <Link to={`/popular-actors/actor-name`}>
-          <img src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
+          {
+            actor.profile_path &&
+            <img className='profile-photo' src={`${baseProfileURL}${actor.profile_path}`} alt={actor.name} />
+          }
           <h3>{actor.name}</h3>
         </Link>
         
