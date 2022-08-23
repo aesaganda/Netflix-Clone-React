@@ -9,7 +9,7 @@ const key = "36a5061485b27e94b39f5b1cdc2a97a2"
 const base_img_path = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/"
 
 function ActorInfoPage() {
-  const { actorId } = useContext(ActorContext);
+  const { actorId, actorKnownWorks } = useContext(ActorContext);
   //const actorId = localStorage.getItem("actorId");
   const [actorInfo, setActorInfo] = useState({});
   const actorInfoURL = `${baseURL}${actorId}?api_key=${key}&language=us-US`;
@@ -24,7 +24,6 @@ function ActorInfoPage() {
 
   const profile_path = `${actorInfo.profile_path}`
   const profile_img = `${base_img_path}${profile_path}`;
-  console.log(actorInfo);
 
   let gender = (actorInfo.gender === 1) ? "Female" : "Male"; 
 
@@ -90,7 +89,15 @@ function ActorInfoPage() {
                 <span>{actorInfo.biography}</span>
               </div>
               <div className="actor-known-job">
-                <ActorMovieInfoSlider />
+              <span>Known Works</span>
+              <br />  
+              <br />  
+
+                {
+                  actorKnownWorks &&
+                  <ActorMovieInfoSlider data={actorKnownWorks}/>
+                }
+
               </div>
             </div>
           </div>

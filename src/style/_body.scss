@@ -177,9 +177,10 @@ Link {
     .actor-wrapper {
         padding: 3%;
         margin: auto;
-
+        
         .actor-column {
-            
+            border-color: rgba(229, 9, 20, 0.7) ;
+            border-style: groove;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -246,8 +247,6 @@ Link {
         .actor-info-section {
             color: white;
             flex: 70%;
-            // background-color: rgb(29, 83, 59);
-            margin: auto;
             min-width: 160px;
             max-width: 1500px;
             .actor-name {
@@ -257,6 +256,12 @@ Link {
             .actor-biography {
                 margin: 5%;
                 font-size: 20px;
+            }
+            .actor-known-job {
+                text-align: center;
+                font-size: 25px;
+                margin: auto;
+                max-width: 800px;
             }
         }
     }
