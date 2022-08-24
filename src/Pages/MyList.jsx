@@ -1,8 +1,12 @@
 import React from 'react'
+import ListBody from "../components/ListBody";
 
 function MyList() {
+
   return (
-    <h2>MyList</h2>
+    <>
+    <ListBody />
+    </>
   )
 }
 
