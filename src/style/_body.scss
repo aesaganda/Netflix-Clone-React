@@ -137,7 +137,7 @@ a {
     }
 
     h3 {
-        padding-top: 5px;
+        padding-top: 8px;
         color: white;
     }
 
@@ -165,6 +165,38 @@ a {
                 margin-right: auto;
             }
         }
+
+        .list-movie-card {
+            background-color: rgba(229, 9, 20, 0.7);
+            padding: 3px;
+            margin: 5px;
+            width: 240px;
+            height: 450px;
+            text-align: center;
+
+            .movie-poster {
+                max-width: 240px;
+                object-fit: cover;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .deleteMovie {
+                background-color: transparent;
+                // border-color: black  ;
+                border: 3px solid black;
+
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 8px 2px 5px;
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -177,9 +209,9 @@ Link {
     .actor-wrapper {
         padding: 3%;
         margin: auto;
-        
+
         .actor-column {
-            border-color: rgba(229, 9, 20, 0.7) ;
+            border-color: rgba(229, 9, 20, 0.7);
             border-style: groove;
             display: flex;
             flex-direction: row;
@@ -189,7 +221,7 @@ Link {
         }
 
         .actor-img-section {
-            background-color:rgba(229, 9, 20, 0.7);
+            background-color: rgba(229, 9, 20, 0.7);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -198,15 +230,17 @@ Link {
             min-width: 160px;
             flex: 30%;
 
-            .social-media-logo{
+            .social-media-logo {
 
                 padding: 5%;
-                img{
+
+                img {
                     margin: 5%;
                     width: 15%;
                 }
 
             }
+
             .personal-information {
                 margin: 5%;
                 padding: 5%;
@@ -249,14 +283,17 @@ Link {
             flex: 70%;
             min-width: 160px;
             max-width: 1500px;
+
             .actor-name {
-                margin: 5%; 
+                margin: 5%;
                 font-size: 30px;
             }
+
             .actor-biography {
                 margin: 5%;
                 font-size: 20px;
             }
+
             .actor-known-job {
                 text-align: center;
                 font-size: 25px;
@@ -272,3 +309,33 @@ Link {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+// alertContainer
+.alert {
+    padding: 20px;
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  .blockDisplayNone {
+    display: none;
+  }
+  .blockDisplayBlock {
+    display: block;
+  }
