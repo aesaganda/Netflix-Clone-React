@@ -6,7 +6,7 @@ const basePosterURL = "https://www.themoviedb.org/t/p/w370_and_h556_multi_faces/
 
 function ListMovieCard({ movie, item }) {
 
-    const { deleteMovie } = useContext(MovieContext);
+    const { deleteMovie, setModalOpen, setMovieDetail } = useContext(MovieContext);
 
     async function removeMovie() {
         try {
@@ -23,7 +23,10 @@ function ListMovieCard({ movie, item }) {
             <div key={item} className="list-movie-card">
                 {
                     movie.poster_path &&
-                    <img className='movie-poster' src={`${basePosterURL}${movie.poster_path}`} alt={movie.title} />
+                    <img onClick={() => {
+                        setModalOpen(true);
+                        setMovieDetail(movie);
+                      }} className='movie-poster' src={`${basePosterURL}${movie.poster_path}`} alt={movie.title} />
                 }
                 {
                     (movie.title) ? <h3>{movie.title}</h3> : <h3>Film Adı Mevcut Değil</h3>
