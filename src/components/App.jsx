@@ -13,6 +13,10 @@ import MoviePage from '../Pages/MoviePage';
 import MyList from '../Pages/MyList';
 import ActorInfoPage from '../Pages/ActorInfoPage';
 import { ActorContext } from '../context/ActorContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 // import 'dotenv/config' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 
 
@@ -85,6 +89,9 @@ function App() {
   return (
     <>
       <MovieContext.Provider value={data}>
+      <ToastContainer />
+
+
         {modalOpen && <Modal setOpenModal={setModalOpen} movieDetail={movieDetail} />}
         <ActorContext.Provider value={actorID}>
           <Header />
