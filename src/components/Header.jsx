@@ -30,7 +30,7 @@ function Header() {
         {/* <!-- * header-left-end  -->*/}
         <div className='header-right' id="header-right-display">
           <div class="search-button">
-            <a href="#"><img src="../img/header/search@2x.svg" alt="search-button" /></a>
+            <Link to="/search"><img src="../img/header/search@2x.svg" alt="search-button" /></Link>
           </div>
           <div class="child">
             <a href="#">ÇOCUK</a>
