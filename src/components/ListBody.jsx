@@ -14,7 +14,7 @@ function ListBody() {
                     listsMovie &&
                     listsMovie.map((movie, item) => {
                         return (
-                            <ListMovieCard movie={movie} item={item} />
+                            <ListMovieCard movie={movie} item={item} isButtonActive={true}/>
                         );
                     })
                 }

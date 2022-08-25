@@ -12,6 +12,7 @@ import PopularActors from '../Pages/PopularActors';
 import MoviePage from '../Pages/MoviePage';
 import MyList from '../Pages/MyList';
 import ActorInfoPage from '../Pages/ActorInfoPage';
+import SearchPage from '../Pages/SearchPage';
 import { ActorContext } from '../context/ActorContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -102,6 +103,7 @@ function App() {
             <Route path='/popular-actors/actor-name' element={<ActorInfoPage />} />
             <Route path="/my-list" element={< MyList />} />
             <Route path="/login" element={< LoginPage />} />
+            <Route path="/search" element={< SearchPage />} />
           </Routes>
         </ActorContext.Provider>
       </MovieContext.Provider>
