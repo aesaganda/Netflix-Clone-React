@@ -11,7 +11,7 @@ function SearchBody() {
     const [queryMovie, setQueryMovie] = useState([]);
  
     useEffect(() => {
-        console.log("query son durum:",query);
+
         if (query=== baseQueryURl) {
             setQueryMovie([]);
         } else {
@@ -24,7 +24,7 @@ function SearchBody() {
     },[query]);  
     
     function searchMovie(event) {
-        console.log(event.target.value);
+
         let queryURl=`https://api.themoviedb.org/3/search/movie?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&query=${event.target.value}&include_adult=false`;
         setQuery(queryURl);
     }

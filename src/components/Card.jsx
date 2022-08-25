@@ -4,7 +4,16 @@ import { MovieContext, useContext } from "../context/MovieContext";
 function Card({ movie }) {
   const { setModalOpen, setMovieDetail } = useContext(MovieContext);
 
-  const movieImg = `https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`;
+  let movieImg;
+
+    if (movie.poster_path) {
+      movieImg = `https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`;
+    } else {
+      movieImg = "../img/body/question-mark.png";
+    }
+
+
+
   return (
     <div className="card" onClick={() => {
       setModalOpen(true);

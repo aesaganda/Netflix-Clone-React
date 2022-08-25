@@ -27,7 +27,6 @@ const errorAlert = (message) => toast.error(message, {
 });
 
 function ListMovieCard({ movie, item, isButtonActive, cardClassName }) {
-
     const { deleteMovie, setModalOpen, setMovieDetail } = useContext(MovieContext);
 
     async function removeMovie() {
@@ -40,18 +39,24 @@ function ListMovieCard({ movie, item, isButtonActive, cardClassName }) {
         }
     }
 
+    let posterURL;
+
+    if (movie.poster_path) {
+        posterURL = `${basePosterURL}${movie.poster_path}`;
+    } else {
+        posterURL = "../img/body/question-mark.png";
+        cardClassName = `${cardClassName} undefinedImg`;
+    }
+
     return (
         <>
             <div key={item} className="list-movie-card">
+                <img onClick={() => {
+                    setModalOpen(true);
+                    setMovieDetail(movie);
+                }} className='movie-poster' src={posterURL} alt={movie.title} />
                 {
-                    movie.poster_path &&
-                    <img onClick={() => {
-                        setModalOpen(true);
-                        setMovieDetail(movie);
-                    }} className='movie-poster' src={`${basePosterURL}${movie.poster_path}`} alt={movie.title} />
-                }
-                {
-                    (movie.title) ? <h3 className={cardClassName}>{movie.title}</h3> : <h3>Film Adı Mevcut Değil</h3>
+                    (movie.title) ? <h3 className={`${cardClassName}`}>{movie.title}</h3> : <h3>Film Adı Mevcut Değil</h3>
                 }
                 {
                     isButtonActive &&
