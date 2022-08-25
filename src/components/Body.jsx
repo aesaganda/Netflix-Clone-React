@@ -1,6 +1,13 @@
 import React from 'react'
 import Slider from './Slider'
 
+const sliderInfo = [
+    { gapSize : 1, rowInfo : 1, movieURL: 3, title: "Melih, İzlemeye Devam Et" },
+    { gapSize : 1, rowInfo : 1, movieURL: 1, title: "En Çok Oy Alanlar" },
+    { gapSize : 1, rowInfo : 1, movieURL: 2, title: "Yakın Zamanda Netflix'te" },
+    { gapSize : 1, rowInfo : 1, movieURL: 0, title: "Yeniden İzle" }
+];
+
 function Body() {
     return (
         <>
@@ -25,34 +32,25 @@ function Body() {
                         </button>
                     </div>
                     <div className="popular style-distance">
-                        <h2>Netflix'te Populer</h2>
-                        <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
+                        <Slider data={{ gapSize : 1, rowInfo : 1, movieURL: 0, title: "Netflix'te Populer" }}/>
                     </div>
                 </div>
             </div>
-            {/* <!-- *  SECTION-main-end--> */}
-            <div className="special style-distance">
-                <h2>Melih, İzlemeye Devam Et</h2>
-                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 3, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
-            </div>
-            <div className="agenda style-distance">
-                <h2>En Çok Oy Alanlar</h2>
-                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 1, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
-            </div>
-            <div className="original style-distance">
-                <h2>Yakın Zamanda Netflix'te</h2>
-                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 2, classNameImg: "img-original-movie-size", classNameSpan: "" }}/>
-            </div>
-            <div className="most-viewed style-distance">
-                <h2>Top 20 Listesi</h2>
-                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 3, classNameImg: "most-viewed-img-size", classNameSpan: "most-viewed-span-size" }}/>
-            </div>
-            <div className="watch-again style-distance">
-                <h2>Yeniden İzle</h2>
-                <Slider gapSize={1} rowsInfo={1} movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size"}}/>
-            </div>
+
+            {
+                sliderInfo.map((info, item) => {
+
+                    return (
+                        <div className="style-distance" key={item}>
+                            <Slider data={info} />
+                        </div>
+                    );
+                })
+            }
         </>
     )
 }
 
 export default Body
+
+

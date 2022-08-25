@@ -12,7 +12,6 @@ function ActorCard({ actor, item }) {
       <div key={item} className="actor-card" onClick={() => {
         setActorId(actor.id)
         setActorKnownWorks(actor.known_for);
-      // localStorage.setItem("actorId",actor.id);
     }}>
         <Link to={`/popular-actors/actor-name`}>
           {

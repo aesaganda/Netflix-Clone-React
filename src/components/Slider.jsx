@@ -3,15 +3,17 @@ import Card from "./Card";
 import {MovieContext,useContext} from "../context/MovieContext";
 import Carousel from "better-react-carousel";
 
-function Slider({ movieDetail,rowsInfo, gapSize }) {
+function Slider({ data }) {
   
   const {moviesInfo} = useContext(MovieContext);
-  let movies = moviesInfo[movieDetail.movieURL];
+  let movies = moviesInfo[data.movieURL];
 
   return (
     <>
+      <h2>{data.title}</h2>
+      <br />
       <div className="slider">
-        <Carousel cols={6} rows={rowsInfo} gap={gapSize} loop>
+        <Carousel cols={6} rows={data.rowInfo} gap={data.gapSize} loop>
           {
             movies && 
             movies.map((movie,item) => {
@@ -20,7 +22,6 @@ function Slider({ movieDetail,rowsInfo, gapSize }) {
                 <Carousel.Item key={item}>
                   <Card
                     movie={movie}
-                    movieDetail={movieDetail}
                   />
                 </Carousel.Item>
               );

@@ -2,8 +2,7 @@ import React from 'react'
 import ActorCard from '../components/ActorCard';
 import { MovieContext, useContext } from '../context/MovieContext';
 
-function ActorBody({data}) {
-//  const  actors = data.pop();
+function ActorBody() {
  const {actorsInfo} = useContext(MovieContext);
 
   return (
