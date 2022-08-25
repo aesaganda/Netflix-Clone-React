@@ -3,6 +3,7 @@
 @import "./header";
 @import "./footer";
 @import "./font";
+@import "./modal";
 @import "./variables";
 
 @media screen and (max-width: 1700px) {
@@ -37,6 +38,16 @@
   }
 }
 
+// @media screen and (max-width: 767px) {
+//   .actor-known-job {
+//     img {
+//       max-width: 100px;
+//     }
+    
+// }
+
+// }
+
 @media screen and (max-width: 655px) {
   .img-movie-name {
     width: 300px;
@@ -57,6 +68,29 @@
 
   .content p {
     font-size: 15px;
+  }
+
+  .modalContent {
+    .title{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    // .contentImg {
+    //   img{
+    //     max-width: 150px;
+    //     object-fit:cover;
+    //   }
+    // }
+    .description {
+      font-size: 9px;
+      padding: 0px 10px 10px 10px;
+    }
+  
+    .subDescription{
+      
+      font-size: 10px;
+      padding: 0px 10px 10px 10px;
+    }
   }
 }
 
@@ -89,6 +123,10 @@
   .content p {
     font-size: 20px;
   }
+
+  // .actor-info-section, .actor-img-section {
+  //   flex: 100%;
+  // }
 }
 
 @media screen and (max-width: 300px) {

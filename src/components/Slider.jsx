@@ -1,13 +1,19 @@
 import React from "react";
 import Card from "./Card";
+import {MovieContext,useContext} from "../context/MovieContext";
 import Carousel from "better-react-carousel";
 
-function Slider({ isActive_bar, movieDetail, moviesInfo }) {
-  let movies = moviesInfo[movieDetail.movieURL];
+function Slider({ data }) {
+  
+  const {moviesInfo} = useContext(MovieContext);
+  let movies = moviesInfo[data.movieURL];
+
   return (
     <>
+      <h2>{data.title}</h2>
+      <br />
       <div className="slider">
-        <Carousel cols={6} rows={1} gap={1} loop>
+        <Carousel cols={6} rows={data.rowInfo} gap={data.gapSize} loop>
           {
             movies && 
             movies.map((movie,item) => {
@@ -16,9 +22,6 @@ function Slider({ isActive_bar, movieDetail, moviesInfo }) {
                 <Carousel.Item key={item}>
                   <Card
                     movie={movie}
-                    isActive_bar={isActive_bar}
-                    movieDetail={movieDetail}
-                    item = {item}
                   />
                 </Carousel.Item>
               );

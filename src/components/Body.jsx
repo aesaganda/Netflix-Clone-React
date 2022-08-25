@@ -1,7 +1,14 @@
 import React from 'react'
 import Slider from './Slider'
 
-function Body({ moviesInfo }) {
+const sliderInfo = [
+    { gapSize : 1, rowInfo : 1, movieURL: 3, title: "Melih, İzlemeye Devam Et" },
+    { gapSize : 1, rowInfo : 1, movieURL: 1, title: "En Çok Oy Alanlar" },
+    { gapSize : 1, rowInfo : 1, movieURL: 2, title: "Yakın Zamanda Netflix'te" },
+    { gapSize : 1, rowInfo : 1, movieURL: 0, title: "Yeniden İzle" }
+];
+
+function Body() {
     return (
         <>
             <div className="section">
@@ -25,34 +32,25 @@ function Body({ moviesInfo }) {
                         </button>
                     </div>
                     <div className="popular style-distance">
-                        <h2>Netflix'te Populer</h2>
-                        <Slider movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size", classNameSpan: "" }} moviesInfo={moviesInfo} />
+                        <Slider data={{ gapSize : 1, rowInfo : 1, movieURL: 0, title: "Netflix'te Populer" }}/>
                     </div>
                 </div>
             </div>
-            {/* <!-- *  SECTION-main-end--> */}
-            <div className="special style-distance">
-                <h2>Melih, İzlemeye Devam Et</h2>
-                <Slider isActive_bar={"true"} movieDetail={{ movieURL: 3, classNameImg: "img-original-movie-size", classNameSpan: "" }} moviesInfo={moviesInfo} />
-            </div>
-            <div className="agenda style-distance">
-                <h2>Gündemdekiler</h2>
-                <Slider movieDetail={{ movieURL: 1, classNameImg: "img-original-movie-size", classNameSpan: "" }} moviesInfo={moviesInfo} />
-            </div>
-            <div className="original style-distance">
-                <h2>Netflix Orijinal İçerikleri</h2>
-                <Slider movieDetail={{ movieURL: 2, classNameImg: "img-original-movie-size", classNameSpan: "" }} moviesInfo={moviesInfo} />
-            </div>
-            <div className="most-viewed style-distance">
-                <h2>Türkiye'de Bugünün Top 10 Listesi</h2>
-                <Slider movieDetail={{ movieURL: 3, classNameImg: "most-viewed-img-size", classNameSpan: "most-viewed-span-size" }} moviesInfo={moviesInfo} />
-            </div>
-            <div className="watch-again style-distance">
-                <h2>Yeniden İzle</h2>
-                <Slider movieDetail={{ movieURL: 0, classNameImg: "img-original-movie-size"}} moviesInfo={moviesInfo} />
-            </div>
+
+            {
+                sliderInfo.map((info, item) => {
+
+                    return (
+                        <div className="style-distance" key={item}>
+                            <Slider data={info} />
+                        </div>
+                    );
+                })
+            }
         </>
     )
 }
 
 export default Body
+
+
