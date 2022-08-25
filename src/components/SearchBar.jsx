@@ -7,7 +7,7 @@ function SearchBar({ searchMovie }) {
                 <input onChange={searchMovie}
                 type="text" 
                 class="searchTerm" 
-                placeholder="What are you looking for?"
+                placeholder="Neyi Aramak İstersin?"
                 />
             </div>
         </div>
