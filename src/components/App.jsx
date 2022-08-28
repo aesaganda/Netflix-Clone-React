@@ -4,23 +4,14 @@ import Footer from './Footer';
 import Modal from "./Modal";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import HomePage from "../Pages/HomePage";
 import { MovieContext } from "../context/MovieContext";
-import { Routes, Route } from 'react-router-dom';
-import LoginPage from "../Pages/LoginPage";
-import PopularActors from '../Pages/PopularActors';
-import MoviePage from '../Pages/MoviePage';
-import MyList from '../Pages/MyList';
-import ActorInfoPage from '../Pages/ActorInfoPage';
-import SearchPage from '../Pages/SearchPage';
 import { ActorContext } from '../context/ActorContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MainRoute from '../routes/MainRoute';
 
 
 // import 'dotenv/config' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
-
-
 // console.log(process.env.REACT_APP_API_KEY);
 
 const movieBaseURL = "https://api.themoviedb.org/3/";
@@ -42,18 +33,31 @@ function App() {
   const [actorKnownWorks, setActorKnownWorks] = useState([]);
   const [listsMovie, setListsMovie] = useState([]);
 
+
+  async function getList() {
+    await axios.get(listsMovieURL)
+      .then(response => { setListsMovie(response.data.items); })
+      .catch(error => { console.error(error); return Promise.reject(error); });
+  }
+
+  async function getActor() {
+    await axios.get(actorURL)
+      .then(response => { setActorsInfo(response.data.results); })
+      .catch(error => { console.error(error); return Promise.reject(error); });
+  }
+
+  async function getMovie() {
+    const { data: popular } = await axios(popularURL);
+    const { data: topRated } = await axios(topRatedURL);
+    const { data: upComing } = await axios(upComingURL);
+    const { data: nowPlaying } = await axios(nowPlayingURL);
+    setMoviesInfo([popular.results, topRated.results, upComing.results, nowPlaying.results]);
+  }
+
   useEffect(() => {
-    (async () => {
-      const { data: popular } = await axios(popularURL);
-      const { data: topRated } = await axios(topRatedURL);
-      const { data: upComing } = await axios(upComingURL);
-      const { data: nowPlaying } = await axios(nowPlayingURL);
-      const { data: actors } = await axios(actorURL);
-      const { data: movie } = await axios(listsMovieURL);
-      setListsMovie(movie.items);
-      setActorsInfo(actors.results);
-      setMoviesInfo([popular.results, topRated.results, upComing.results, nowPlaying.results]);
-    })();
+    getList();
+    getMovie();
+    getActor();
   }, []);
 
   const data = {
@@ -64,10 +68,11 @@ function App() {
     moviesInfo,
     actorsInfo,
     listsMovie,
-    
+
     deleteMovie,
     addListMovie,
   }
+  
   const actorID = {
     actorId,
     setActorId,
@@ -90,21 +95,11 @@ function App() {
   return (
     <>
       <MovieContext.Provider value={data}>
-      <ToastContainer />
-
-
+        <ToastContainer />
         {modalOpen && <Modal setOpenModal={setModalOpen} movieDetail={movieDetail} />}
         <ActorContext.Provider value={actorID}>
           <Header />
-          <Routes>
-            <Route path="/" element={< HomePage />} />
-            <Route path="/movies-series" element={< MoviePage />} />
-            <Route path="/popular-actors" element={< PopularActors />} />
-            <Route path='/popular-actors/actor-name' element={<ActorInfoPage />} />
-            <Route path="/my-list" element={< MyList />} />
-            <Route path="/login" element={< LoginPage />} />
-            <Route path="/search" element={< SearchPage />} />
-          </Routes>
+          <MainRoute />
         </ActorContext.Provider>
       </MovieContext.Provider>
       <Footer />
