@@ -1,5 +1,19 @@
 import React from 'react'
 
+const media_logo_info = [
+    { url: "https://tr-tr.facebook.com/netflixturkiye", img_src: "./img/footer/facebook@2x.svg",  img_alt: "facebook-logo"  },
+    { url: "https://www.instagram.com/netflixturkiye",  img_src: "./img/footer/instagram@2x.svg", img_alt: "instagram-logo" },
+    { url: "https://twitter.com/netflixturkiye",        img_src: "./img/footer/twitter@2x.svg",   img_alt: "twitter-logo"   },
+    { url: "https://www.youtube.com/c/Netflix",         img_src: "./img/footer/youtube@2x.svg",   img_alt: "youtube-logo"   },
+];
+
+const link_group_info = [
+    ["Seslendirme ve Alt Yazı"  , "Medya Merkezi"           , "Bize Ulaşın"         ],
+    ["Sesli Betimleme"          , "Yatırımcı İlişkileri"    , "Yasal Yükümlülükler" ],
+    ["Yardım Merkezi"           , "İş İmkanları"            , "Çerez Tercihleri"    ],
+    ["Hadiye Kartları"          , "Kullanım Koşulları"      , "Kurumsal Bilgiler"   ]
+];
+
 function Footer() {
     return (
         <>
@@ -7,41 +21,33 @@ function Footer() {
                 <div className="block"></div>
                 <div className="block">
                     <div className="social-media">
-                        <div className="media-logo">
-                            <a href="https://tr-tr.facebook.com/netflixturkiye/"><img src="./img/footer/facebook@2x.svg" alt="facebook-logo"/></a>
-                        </div>
-                        <div className="media-logo">
-                            <a href="https://www.instagram.com/netflixturkiye/?hl=tr"><img src="./img/footer/instagram@2x.svg" alt="instagram-logo"/></a>
-                        </div>
-                        <div className="media-logo">
-                            <a href="https://twitter.com/netflixturkiye?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="./img/footer/twitter@2x.svg" alt="twitter-logo"/></a>
-                        </div>
-                        <div className="media-logo">
-                            <a href="https://www.youtube.com/c/Netflix/videos"><img src="./img/footer/youtube@2x.svg" alt="youtube-logo"/></a>
-                        </div>
+                        {
+                            media_logo_info.map((info, item) => {
+                                return (
+                                    < div className="media-logo" key={item}>
+                                        <a href={info.url}><img src={info.img_src} alt={info.img_alt} /></a>
+                                    </div>
+                                );
+                            })
+                        }
                     </div>
 
                     <div className="link-group">
-                        <ul className="group">
-                            <li><a href="#">Seslendirme ve Alt Yazı</a></li>
-                            <li><a href="#">Medya Merkezi</a></li>
-                            <li><a href="#">Bize Ulaşın</a></li>
-                        </ul>
-                        <ul className="group">
-                            <li><a href="#">Sesli Betimleme</a></li>
-                            <li><a href="#">Yatırımcı İlişkileri</a></li>
-                            <li><a href="#">Yasal Yükümlülükler</a></li>
-                        </ul>
-                        <ul className="group">
-                            <li><a href="#">Yardım Merkezi</a></li>
-                            <li><a href="#">İş İmkanları</a></li>
-                            <li><a href="#">Çerez Tercihleri</a></li>
-                        </ul>
-                        <ul className="group">
-                            <li><a href="#">Hadiye Kartları</a></li>
-                            <li><a href="#">Kullanım Koşulları</a></li>
-                            <li><a href="#">Kurumsal Bilgiler</a></li>
-                        </ul>
+                        {
+                            link_group_info.map((data, item) => {
+                                return (
+                                    <ul className="group" key={item}>
+                                        {
+                                            data.map((info, index) => {
+                                                return (
+                                                    <li key={index}><a href="#">{info}</a></li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                );
+                            })
+                        }
                     </div>
                     <a className="service-code" href="#">
                         <button className="service-code-button">Hizmet Kodu</button>

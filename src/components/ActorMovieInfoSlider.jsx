@@ -6,7 +6,6 @@ const baseMovieURL = "https://www.themoviedb.org/t/p/w150_and_h225_bestv2";
 const ActorMovieInfoSlider = ({ data }) => {
   return (
     <Carousel cols={3} rows={1} gap={10} loop>
-
       {
         data &&
         data.map((movieInfo, item) => {
@@ -20,10 +19,6 @@ const ActorMovieInfoSlider = ({ data }) => {
           );
         })
       }
-
-
-
-
     </Carousel>
   )
 }

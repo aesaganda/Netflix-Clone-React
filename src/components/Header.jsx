@@ -48,7 +48,6 @@ function Header() {
             <a href="#"><img src="../img/header/downarrow@2x.svg" alt="down-bar" /></a>
           </div>
         </div>
-        {/* <!-- * header-right-end  --> */}
       </div>
     </>
   )
