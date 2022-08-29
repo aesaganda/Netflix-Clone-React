@@ -1,6 +1,5 @@
 const basePosterURL = "https://www.themoviedb.org/t/p/w370_and_h556_multi_faces/";
 const base_img_path = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
-const base_img_path_modal = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
 let posterURL;
 let profilURL;
 
@@ -25,7 +24,7 @@ export function urlActorMaker(path) {
 
 export function urlMakerModal(path) {
     if (path) {
-        posterURL = `${base_img_path_modal}${path}`;
+        posterURL = `${process.env.CARD_IMG_BASE_URL}${path}`;
     } else {
         posterURL = "../img/body/question-mark.png";
     }

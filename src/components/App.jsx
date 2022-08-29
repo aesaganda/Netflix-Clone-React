@@ -3,28 +3,21 @@ import Header from './Header';
 import Footer from './Footer';
 import Modal from "./Modal";
 import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import { MovieContext } from "../context/MovieContext";
 import { ActorContext } from '../context/ActorContext';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import MainRoute from '../routes/MainRoute';
 
-
-// import 'dotenv/config' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
-// console.log(process.env.REACT_APP_API_KEY);
-
-const movieBaseURL = "https://api.themoviedb.org/3/";
-const popularURL = `${movieBaseURL}movie/popular?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
-const topRatedURL = `${movieBaseURL}movie/top_rated?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
-const upComingURL = `${movieBaseURL}movie/upcoming?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
-const nowPlayingURL = `${movieBaseURL}movie/now_playing?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1`;
-const actorURL = "https://api.themoviedb.org/3/person/popular?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&page=1";
-const listsMovieURL = `${movieBaseURL}list/8214743?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US`;
-
+const popularURL = `${process.env.MOVIE_BASE_URL}movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+const topRatedURL = `${process.env.MOVIE_BASE_URL}movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+const upComingURL = `${process.env.MOVIE_BASE_URL}movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+const nowPlayingURL = `${process.env.MOVIE_BASE_URL}movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+const listsMovieURL = `${process.env.MOVIE_BASE_URL}list/8214743?api_key=${process.env.API_KEY}&language=en-US`;
+const actorURL = `${process.env.MOVIE_BASE_URL}person/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`;
 
 function App() {
-
   const [modalOpen, setModalOpen] = useState(false);
   const [movieDetail, setMovieDetail] = useState({});
   const [moviesInfo, setMoviesInfo] = useState([]);
@@ -32,7 +25,6 @@ function App() {
   const [actorsInfo, setActorsInfo] = useState([]);
   const [actorKnownWorks, setActorKnownWorks] = useState([]);
   const [listsMovie, setListsMovie] = useState([]);
-
 
   async function getList() {
     await axios.get(listsMovieURL)
@@ -72,7 +64,7 @@ function App() {
     deleteMovie,
     addListMovie,
   }
-  
+
   const actorID = {
     actorId,
     setActorId,
