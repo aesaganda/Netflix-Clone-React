@@ -6,6 +6,7 @@
 * npm
 * VS Code veya alternatifi
 
+## Proje Kurulumu:
 ```
 node --version 
 npm --v
@@ -36,3 +37,28 @@ Son olarak projeyi çalıştırmak için:
 npm run dev
 ```
 Proje ilk defa çalıştırıldığından api a gönderilen sorgu zaman aşımına uğrayabilir sayfayı refresh edebilirsiniz.
+<hr>
+
+## Proje Yapısı :
+
+Projenin çalışmasındaki alt yapı webpack ile oluşturulmuştur.
+
+### Projede Kullanılan Webpack, Plugin, Loader, ... :  
+* WebpackDevServer
+* HtmlWebpackPlugin
+* CleanWebpackPlugin
+* EnvironmentPlugin
+* UglifyJsPlugin
+* style-loader
+* css-loader
+* sass-loader
+* babel-loader
+<hr>
+
+## Proje Klasör Yapısı :
+![projeKlasor](https://user-images.githubusercontent.com/77414773/187215979-40911f09-07b1-42ad-8303-c095e9c9e86c.png)
+
+<hr>
+
+## Proje Video :
+
