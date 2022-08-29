@@ -62,3 +62,20 @@ Projenin çalışmasındaki alt yapı webpack ile oluşturulmuştur.
 
 ## Proje Video :
 
+### Anasayfa
+https://user-images.githubusercontent.com/77414773/187233301-bfd02e66-525b-41b2-90cc-35d256d6eecc.mp4
+
+### Filmler ve Diziler
+https://user-images.githubusercontent.com/77414773/187233985-5402aa70-b020-4370-8cee-d9cf94854950.mp4
+
+### Popüler Oyuncular
+https://user-images.githubusercontent.com/77414773/187234395-7f28f51b-52fb-469a-aa1a-46afe7d578be.mp4
+
+### Listem
+https://user-images.githubusercontent.com/77414773/187234555-b3ce0f44-1e8f-4420-a052-2abf342b33b0.mp4
+
+### Arama
+https://user-images.githubusercontent.com/77414773/187234612-b4b19180-9f81-4dec-abf1-77c31da65e5f.mp4
+
+
+
