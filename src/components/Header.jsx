@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import DropDown from "../components/DropDown";
 
 function Header() {
   return (
@@ -7,7 +8,7 @@ function Header() {
       <div className='header' style={{ color: "white" }}>
         <div className='header-left'>
           <div className='netflix-logo'>
-            <img src="./img/header/netflixlogosvg@2x.svg" alt="netflix-logo" title="https://www.netflix.com/tr/" />
+          <Link to="/"><img src="./img/header/netflixlogosvg@2x.svg" title="https://www.netflix.com/tr/" /></Link>
           </div>
           <div className='navbar' id="navbar-display">
             <div class="navbar-link-homepage text-white">
@@ -28,24 +29,21 @@ function Header() {
           </div>
         </div>
         {/* <!-- * header-left-end  -->*/}
-        <div className='header-right' id="header-right-display">
-          <div class="search-button">
+        <div className='header-right'>
+          <div class="search-button header-right-display ">
             <Link to="/search"><img src="../img/header/search@2x.svg" alt="search-button" /></Link>
           </div>
-          <div class="child">
-            <a href="#">ÇOCUK</a>
-          </div>
-          <div class="giftbox">
+          <div class="giftbox header-right-display">
             <a href="#"><img src="../img/header/giftbox@2x.svg" alt="giftbox" /></a>
           </div>
-          <div class="notificationbell">
+          <div class="notificationbell header-right-display">
             <a href="#"><img src="../img/header/notificationbell@2x.svg" alt="notification-bell" /></a>
           </div>
-          <div class="profile">
-            <a href="#"><img style={{ width: "25px" }} src="../img/header/profileimg@2x.png" alt="profile" /></a>
+          <div class="profile header-right-display">
+            <a href="#"><img src="../img/header/profileimg@2x.png" alt="profile" /></a>
           </div>
           <div class="down-bar">
-            <a href="#"><img src="../img/header/downarrow@2x.svg" alt="down-bar" /></a>
+            <DropDown />
           </div>
         </div>
       </div>
