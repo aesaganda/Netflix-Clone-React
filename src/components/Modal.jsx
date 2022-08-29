@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { MovieContext, useContext } from "../context/MovieContext";
 import { successAlert, warningAlert } from "../helpers/AlertHelper";
 import { urlMakerModal } from "../helpers/UrlHelper";
 
 function Modal({ setOpenModal, movieDetail }) {
+  const [likeButtonColor, setLikebuttonColor] = useState("../img/body/likebutton.png");
   const { addListMovie } = useContext(MovieContext);
   const posterURL =  urlMakerModal(movieDetail.poster_path, "");
 
@@ -13,12 +14,13 @@ function Modal({ setOpenModal, movieDetail }) {
       await axios.post(`${process.env.ADD_MOVIE_API_URL}${movieDetail.id}`);
       successAlert("Filminiz Listeye eklendi.");
       addListMovie(movieDetail);
+      setLikebuttonColor("../img/body/redLike.png")
     } catch (error) {
       error == "AxiosError: Request failed with status code 403"
         ? warningAlert("Lütfen tekrar eklemeye çalışmayınız.")
         : warningAlert(error);
     } finally {
-      setOpenModal(false);
+      // setOpenModal(false);
     }
   }
   return (
@@ -56,7 +58,7 @@ function Modal({ setOpenModal, movieDetail }) {
                 <img
                   onClick={addMovie}
                   className="likeButton"
-                  src="../img/body/likebutton.png"
+                  src={likeButtonColor}
                 />
               </div>
               <div className="avarage">
