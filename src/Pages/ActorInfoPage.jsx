@@ -1,31 +1,37 @@
 import React from 'react'
 import { ActorContext, useContext } from '../context/ActorContext';
+import ActorMovieInfoSlider from '../components/ActorMovieInfoSlider';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import ActorMovieInfoSlider from '../components/ActorMovieInfoSlider';
+import { urlActorMaker } from '../helpers/UrlHelper';
 
 const baseURL = "https://api.themoviedb.org/3/person/"
-const key = "36a5061485b27e94b39f5b1cdc2a97a2"
-const base_img_path = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/"
+const key     = "36a5061485b27e94b39f5b1cdc2a97a2"
 
 function ActorInfoPage() {
   const { actorId, actorKnownWorks } = useContext(ActorContext);
-  //const actorId = localStorage.getItem("actorId");
-  const [actorInfo, setActorInfo] = useState({});
+  const [ actorInfo, setActorInfo ] = useState({});
+
   const actorInfoURL = `${baseURL}${actorId}?api_key=${key}&language=us-US`;
+  async function getActor() {
+    await axios.get(actorInfoURL)
+      .then(response => { setActorInfo(response.data); })
+      .catch(error => { console.error(error); return Promise.reject(error); });
+  }
 
   useEffect(() => {
-    (async () => {
-
-      const { data } = await axios(actorInfoURL);
-      setActorInfo(data);
-    })();
+    getActor();
   }, []);
 
-  const profile_path = `${actorInfo.profile_path}`
-  const profile_img = `${base_img_path}${profile_path}`;
+  const personal_information_array = [
+    { title: "Known Job", data: actorInfo.known_for_department },
+    { title: "Gender", data: (actorInfo.gender === 1) ? "Female" : "Male" },
+    { title: "Birthday", data: actorInfo.birthday },
+    { title: "Place of birth", data: actorInfo.place_of_birth },
+    { title: "Deathday", data: (actorInfo.deathday != null) ? actorInfo.deathday : "Lives"}
+  ];
 
-  let gender = (actorInfo.gender === 1) ? "Female" : "Male"; 
+  let profileURL = urlActorMaker(actorInfo.profile_path);
 
   return (
     <>
@@ -35,10 +41,7 @@ function ActorInfoPage() {
             {/* flex-left */}
             <div className="actor-img-section">
               <div className="actor-img">
-                {
-                  profile_path &&
-                  <img src={profile_img} alt={actorInfo.name} />
-                }
+                <img src={profileURL} alt={actorInfo.name} />
               </div>
               <div className="social-media-logo center">
                 <img src='../img/body/instagram.png' />
@@ -48,36 +51,16 @@ function ActorInfoPage() {
                 <div className="personal-information-element">
                   <h3>Personal Information</h3>
                 </div>
-                <div className="personal-information-element">
-                  <span className='title-h3'>Known Job</span>
-                  <span className='information-element-span'>
-                    {actorInfo.known_for_department}
-                  </span>
-                </div>
-                <div className="personal-information-element">
-                <span className='title-h3'>Gender</span>
-                  {
-                    gender &&
-                    <span className='information-element-span'>{gender}</span>
-                  }
-                </div>
-                <div className="personal-information-element">
-                <span className='title-h3'>Birthday</span>
-                  <span className='information-element-span'>{actorInfo.birthday}</span>
-                </div>
                 {
-                  actorInfo.deathday &&
-                  <div className="personal-information-element">
-                  <span className='title-h3'>Deathday</span>
-                    <span className='information-element-span'>{actorInfo.deathday}</span>
-                  </div>
+                  personal_information_array.map((data, item) => {
+                    return (
+                      <div key={item} className="personal-information-element">
+                        <span className='title-h3'>{data.title}</span>
+                        <span className='information-element-span'>{data.data}</span>
+                      </div>
+                    );
+                  })
                 }
-                <div className="personal-information-element">
-                  <span className='title-h3'>Place of birth</span>
-                  <span className='information-element-span'>
-                  {actorInfo.place_of_birth}
-                  </span>
-                </div>
               </div>
             </div>
             {/* flex-right */}
@@ -89,24 +72,19 @@ function ActorInfoPage() {
                 <span>{actorInfo.biography}</span>
               </div>
               <div className="actor-known-job">
-              <span>Known Works</span>
-              <br />  
-              <br />  
-
+                <span>Known Works</span>
+                <br />
+                <br />
                 {
                   actorKnownWorks &&
-                  <ActorMovieInfoSlider data={actorKnownWorks}/>
+                  <ActorMovieInfoSlider data={actorKnownWorks} />
                 }
-
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </>
-
   )
 }
 

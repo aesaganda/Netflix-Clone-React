@@ -39,7 +39,6 @@ function Body() {
 
             {
                 sliderInfo.map((info, item) => {
-
                     return (
                         <div className="style-distance" key={item}>
                             <Slider data={info} />

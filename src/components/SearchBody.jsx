@@ -3,16 +3,12 @@ import axios from "axios";
 import SearchBar from './SearchBar'
 import ListMovieCard from '../components/ListMovieCard';
 
-const baseQueryURl = "https://api.themoviedb.org/3/search/movie?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&query=&include_adult=false";
-
 function SearchBody() {
-    
     const [query, setQuery] = useState("");
     const [queryMovie, setQueryMovie] = useState([]);
- 
-    useEffect(() => {
 
-        if (query=== baseQueryURl) {
+    useEffect(() => {
+        if (query === process.env.BASE_QUERY_URL) {
             setQueryMovie([]);
         } else {
             (async () => {
@@ -20,12 +16,10 @@ function SearchBody() {
                 setQueryMovie(data.results);
             })();
         }
-        
-    },[query]);  
+    },[query]);
     
     function searchMovie(event) {
-
-        let queryURl=`https://api.themoviedb.org/3/search/movie?api_key=36a5061485b27e94b39f5b1cdc2a97a2&language=en-US&query=${event.target.value}&include_adult=false`;
+        let queryURl=`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${event.target.value}&include_adult=false`;
         setQuery(queryURl);
     }
     

@@ -4,9 +4,7 @@ import { MovieContext, useContext } from '../context/MovieContext';
 
 function ActorBody() {
  const {actorsInfo} = useContext(MovieContext);
-
   return (
-
     <>
         <div className='main-actors-list'>
         <div className='title'>
