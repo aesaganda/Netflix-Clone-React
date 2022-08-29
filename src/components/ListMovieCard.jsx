@@ -4,14 +4,12 @@ import { MovieContext, useContext } from '../context/MovieContext'
 import { successAlert, errorAlert } from "../helpers/AlertHelper";
 import { urlMovieMaker } from '../helpers/UrlHelper';
 
-const removeApiURL = `https://api.themoviedb.org/3/list/8214743/remove_item?session_id=03736be069f18c992cec140c9e99f579734c39fb&api_key=36a5061485b27e94b39f5b1cdc2a97a2&media_id=`
-
 function ListMovieCard({ movie, item, isButtonActive, cardClassName }) {
     const { deleteMovie, setModalOpen, setMovieDetail } = useContext(MovieContext);
 
     async function removeMovie() {
         try {
-            await axios.post(`${removeApiURL}${movie.id}`)
+            await axios.post(`${process.env.REMOVE_API_URL}${movie.id}`)
             successAlert('Listeden başarıyla kaldırıldı.');
             deleteMovie(movie);
         } catch (error) {

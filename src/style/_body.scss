@@ -1,6 +1,5 @@
 body {
     background-color: var(--primary-bg);
-
 }
 
 h1 {
@@ -136,7 +135,7 @@ a {
         margin: auto;
 
         .actor-card {
-            background-color: rgba(229, 9, 20, 0.7);
+            background: var(--netflix-color-bg);
             padding: 2px;
             margin: 5px;
             width: 240px;
@@ -153,7 +152,7 @@ a {
         }
 
         .list-movie-card {
-            background-color: rgba(229, 9, 20, 0.7);
+            background: var(--netflix-color-bg);
             padding: 3px;
             margin: 5px;
             width: 240px;
@@ -210,7 +209,7 @@ Link {
         margin: auto;
 
         .actor-column {
-            border-color: rgba(229, 9, 20, 0.7);
+            border-color: var(--netflix-color-bg);
             border-style: groove;
             display: flex;
             flex-direction: row;
@@ -220,7 +219,7 @@ Link {
         }
 
         .actor-img-section {
-            background-color: rgba(229, 9, 20, 0.7);
+            background: var(--netflix-color-bg);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -415,7 +414,7 @@ ul{
   }
   
   .dropdown-menu ul li:hover a{
-    color: rgb(212, 33, 9);
+    color: var(--netflix-color-bg);
     cursor: pointer;
   }
   
@@ -442,3 +441,39 @@ ul{
     transition: var(--speed);
   }
   
+  //404
+  #main404{
+    display: table;
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    margin: 0%;
+}
+
+.container404{
+    display: table-cell;
+    vertical-align: middle;
+    
+    h1{
+        color: var(--netflix-color-bg);
+        font-family: 'Lato', sans-serif;
+        display: inline-block;
+        font-size: 50px;
+        padding-right: 12px;
+        animation: type .5s alternate infinite;
+        font-style: italic;
+    }
+
+    h2 {
+        color: var(--netflix-color-bg);
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;
+    }
+}
+
+
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #888;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}

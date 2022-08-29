@@ -6,7 +6,7 @@ function Card({ movie }) {
   let movieImg;
 
   if (movie.poster_path) {
-    movieImg = `https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`;
+    movieImg = `${process.env.CARD_IMG_BASE_URL}${movie.poster_path}`;
   } else {
     movieImg = "../img/body/question-mark.png";
   }

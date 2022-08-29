@@ -2,17 +2,15 @@ import React from "react";
 import axios from "axios";
 import { MovieContext, useContext } from "../context/MovieContext";
 import { successAlert, warningAlert } from "../helpers/AlertHelper";
-import { urlMakerModal, urlWeb } from "../helpers/UrlHelper";
-
-const addMovieApiURL = `https://api.themoviedb.org/3/list/8214743/add_item?api_key=36a5061485b27e94b39f5b1cdc2a97a2&session_id=03736be069f18c992cec140c9e99f579734c39fb&media_id=`;
+import { urlMakerModal } from "../helpers/UrlHelper";
 
 function Modal({ setOpenModal, movieDetail }) {
   const { addListMovie } = useContext(MovieContext);
   const posterURL =  urlMakerModal(movieDetail.poster_path, "");
-  // urlWeb(movieDetail.title)
+
   async function addMovie() {
     try {
-      await axios.post(`${addMovieApiURL}${movieDetail.id}`);
+      await axios.post(`${process.env.ADD_MOVIE_API_URL}${movieDetail.id}`);
       successAlert("Filminiz Listeye eklendi.");
       addListMovie(movieDetail);
     } catch (error) {
