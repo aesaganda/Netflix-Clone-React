@@ -1,10 +1,10 @@
 import React from 'react'
 
 const media_logo_info = [
-    { url: "https://tr-tr.facebook.com/netflixturkiye", img_src: "./img/footer/facebook@2x.svg",  img_alt: "facebook-logo"  },
-    { url: "https://www.instagram.com/netflixturkiye",  img_src: "./img/footer/instagram@2x.svg", img_alt: "instagram-logo" },
-    { url: "https://twitter.com/netflixturkiye",        img_src: "./img/footer/twitter@2x.svg",   img_alt: "twitter-logo"   },
-    { url: "https://www.youtube.com/c/Netflix",         img_src: "./img/footer/youtube@2x.svg",   img_alt: "youtube-logo"   },
+    { url: "https://tr-tr.facebook.com/netflixturkiye", img_src: "../../img/footer/facebook@2x.svg",  img_alt: "facebook-logo"  },
+    { url: "https://www.instagram.com/netflixturkiye",  img_src: "../../img/footer/instagram@2x.svg", img_alt: "instagram-logo" },
+    { url: "https://twitter.com/netflixturkiye",        img_src: "../../img/footer/twitter@2x.svg",   img_alt: "twitter-logo"   },
+    { url: "https://www.youtube.com/c/Netflix",         img_src: "../../img/footer/youtube@2x.svg",   img_alt: "youtube-logo"   },
 ];
 
 const link_group_info = [
