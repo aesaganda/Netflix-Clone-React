@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+
 import Modal from "./Modal";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,14 +25,14 @@ function App() {
   const [actorKnownWorks, setActorKnownWorks] = useState([]);
   const [listsMovie, setListsMovie] = useState([]);
 
-  async function getList() {
-    await axios.get(listsMovieURL)
+  function getList() {
+    return axios.get(listsMovieURL)
       .then(response => { setListsMovie(response.data.items); })
       .catch(error => { console.error(error); return Promise.reject(error); });
   }
 
-  async function getActor() {
-    await axios.get(actorURL)
+   function getActor() {
+    return axios.get(actorURL)
       .then(response => { setActorsInfo(response.data.results); })
       .catch(error => { console.error(error); return Promise.reject(error); });
   }
@@ -90,11 +89,9 @@ function App() {
         <ToastContainer />
         {modalOpen && <Modal setOpenModal={setModalOpen} movieDetail={movieDetail} />}
         <ActorContext.Provider value={actorID}>
-          <Header />
           <MainRoute />
         </ActorContext.Provider>
       </MovieContext.Provider>
-      <Footer />
     </>
   )
 }
