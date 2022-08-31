@@ -4,6 +4,8 @@ import ActorMovieInfoSlider from '../components/ActorMovieInfoSlider';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { urlActorMaker } from '../helpers/UrlHelper';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const baseURL = "https://api.themoviedb.org/3/person/"
 const key     = "36a5061485b27e94b39f5b1cdc2a97a2"
@@ -35,6 +37,7 @@ function ActorInfoPage() {
 
   return (
     <>
+    <Header />
       <div className='actor-main'>
         <div className='actor-wrapper'>
           <div className='actor-column'>
@@ -84,6 +87,7 @@ function ActorInfoPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

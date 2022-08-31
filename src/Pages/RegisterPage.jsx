@@ -1,15 +1,15 @@
 import React from 'react'
-import FormLogin from '../components/FormLogin'
+import FormRegister from '../components/FormRegister'
 
-function LoginPage() {
+function RegisterPage() {
   return (
     <>
       <div className='form-section'>
         <a className="logo" href="https://www.netflix.com/" target="_blank"><img src="../../img/body/netflixLogo.png" /></a>
-        <FormLogin />
+        <FormRegister />
       </div>
     </>
   )
 }
 
-export default LoginPage
+export default RegisterPage
