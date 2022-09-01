@@ -40,7 +40,7 @@ function Header() {
             <a href="#"><img src="../../img/header/notificationbell@2x.svg" alt="notification-bell" /></a>
           </div>
           <div class="profile header-right-display">
-            <Link to="/"><img src="../../img/header/profileimg@2x.png" alt="profile" /></Link>
+            <Link to="/profile"><img src="../../img/header/profileimg@2x.png" alt="profile" /></Link>
           </div>
           <div class="down-bar">
             <DropDown />
