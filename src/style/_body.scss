@@ -440,6 +440,13 @@ ul{
     margin-left: 10px;
     transition: var(--speed);
   }
+
+  .dropdownItem span{
+    max-width: 100px;
+    margin-left: 10px;
+    transition: var(--speed);
+    color: #000;
+  }
   
   //404
   #main404{
