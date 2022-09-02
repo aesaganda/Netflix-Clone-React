@@ -47,8 +47,8 @@ function ActorInfoPage() {
                 <img src={profileURL} alt={actorInfo.name} />
               </div>
               <div className="social-media-logo center">
-                <img src='../img/body/instagram.png' />
-                <img src='../img/body/twitter.png' />
+                <img src='../static/img/body/instagram.png' />
+                <img src='../static/img/body/twitter.png' />
               </div>
               <div className="personal-information">
                 <div className="personal-information-element">

@@ -32,20 +32,20 @@ function DropDown() {
   return (
     <div className='menu-container' ref={menuRef}>
       <div className='menu-trigger' onClick={() => { setOpen(!open) }}>
-        <img src="../img/header/downarrow@2x.svg" alt="down-bar" />
+        <img src="../static/img/header/downarrow@2x.svg" alt="down-bar" />
       </div>
 
       <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
         <ul>
-          <DropdownItem img={"../img/header/user.png"} text={"Profilim"} link={"/profile"} />
-          <DropdownItem img={"../img/header/apps.png"} text={"Dizi-Film"} link={"/movies-series"} />
-          <DropdownItem img={"../img/header/users-alt.png"} text={"Aktör-Aktris"} link={"/popular-actors"} />
-          <DropdownItem img={"../img/header/list-check.png"} text={"Listem"} link={"/my-list"} />
-          <DropdownItem img={"../img/header/search.png"} text={"Ara"} link={"/search"} />
-          <DropdownItem img={"../img/header/settings.png"} text={"Ayarlar"} link={"/"} />
-          <DropdownItem img={"../img/header/question.png"} text={"Yardım"} link={"/"} />
+          <DropdownItem img={"../static/img/header/user.png"} text={"Profilim"} link={"/profile"} />
+          <DropdownItem img={"../static/img/header/apps.png"} text={"Dizi-Film"} link={"/movies-series"} />
+          <DropdownItem img={"../static/img/header/users-alt.png"} text={"Aktör-Aktris"} link={"/popular-actors"} />
+          <DropdownItem img={"../static/img/header/list-check.png"} text={"Listem"} link={"/my-list"} />
+          <DropdownItem img={"../static/img/header/search.png"} text={"Ara"} link={"/search"} />
+          <DropdownItem img={"../static/img/header/settings.png"} text={"Ayarlar"} link={"/"} />
+          <DropdownItem img={"../static/img/header/question.png"} text={"Yardım"} link={"/"} />
           <li className='dropdownItem'>
-            <img src={"../img/header/log-out.png"}></img>
+            <img src={"../static/img/header/log-out.png"}></img>
             <span onClick={handleLogout}>{"Profilden Çıkış"} </span>
           </li>
         </ul>

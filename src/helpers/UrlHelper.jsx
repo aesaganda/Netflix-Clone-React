@@ -7,7 +7,7 @@ export function urlMovieMaker(path, className) {
     if (path) {
         posterURL = `${basePosterURL}${path}`;
     } else {
-        posterURL = "../img/body/question-mark.png";
+        posterURL = "../static/img/body/question-mark.png";
         className = `${className} undefinedImg`;
     }
     return { posterURL, className };
@@ -17,7 +17,7 @@ export function urlActorMaker(path) {
     if (path) {
         profilURL = `${base_img_path}${path}`;
     } else {
-        profilURL = "../img/body/question.png";
+        profilURL = "../static/img/body/question.png";
     }
     return profilURL;
 }
@@ -26,7 +26,7 @@ export function urlMakerModal(path) {
     if (path) {
         posterURL = `${process.env.CARD_IMG_BASE_URL}${path}`;
     } else {
-        posterURL = "../img/body/question-mark.png";
+        posterURL = "../static/img/body/question-mark.png";
     }
     return posterURL;
 }

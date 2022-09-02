@@ -10,7 +10,7 @@ function ActorCard({ actor, item }) {
   if (actor.profile_path) {
     profilePhotoURL = `${process.env.PROFILE_BASE_URL}${actor.profile_path}`;
   } else {
-    profilePhotoURL = "../img/body/question.png";
+    profilePhotoURL = "../static/img/body/question.png";
   }
 
   return (

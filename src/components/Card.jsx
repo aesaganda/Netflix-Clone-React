@@ -8,7 +8,7 @@ function Card({ movie }) {
   if (movie.poster_path) {
     movieImg = `${process.env.CARD_IMG_BASE_URL}${movie.poster_path}`;
   } else {
-    movieImg = "../img/body/question-mark.png";
+    movieImg = "..static/img/body/question-mark.png";
   }
 
   return (

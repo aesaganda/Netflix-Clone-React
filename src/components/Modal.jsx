@@ -5,7 +5,7 @@ import { successAlert, warningAlert } from "../helpers/AlertHelper";
 import { urlMakerModal } from "../helpers/UrlHelper";
 
 function Modal({ setOpenModal, movieDetail }) {
-  const [likeButtonColor, setLikebuttonColor] = useState("../img/body/likebutton.png");
+  const [likeButtonColor, setLikebuttonColor] = useState("../static/img/body/likebutton.png");
   const { addListMovie } = useContext(MovieContext);
   const posterURL =  urlMakerModal(movieDetail.poster_path, "");
 
@@ -14,7 +14,7 @@ function Modal({ setOpenModal, movieDetail }) {
       await axios.post(`${process.env.ADD_MOVIE_API_URL}${movieDetail.id}`);
       successAlert("Filminiz Listeye eklendi.");
       addListMovie(movieDetail);
-      setLikebuttonColor("../img/body/redLike.png")
+      setLikebuttonColor("../static/img/body/redLike.png")
     } catch (error) {
       error == "AxiosError: Request failed with status code 403"
         ? warningAlert("Lütfen tekrar eklemeye çalışmayınız.")
@@ -74,7 +74,7 @@ function Modal({ setOpenModal, movieDetail }) {
               e.preventDefault();
               window.location.href=`http://netflix.com/`;
               }}>
-            <img src="../img/body/play@2x.svg" alt="play" />
+            <img src="../static/img/body/play@2x.svg" alt="play" />
             <span>Oynat</span>
           </button>
         </div>
