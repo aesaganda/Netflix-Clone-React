@@ -24,7 +24,7 @@ p {
 }
 
 .section {
-    background-image: url('../../img/body/originalfoto.jpeg');
+    background-image: url('/static/img/body/originalfoto.jpeg');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
@@ -491,7 +491,7 @@ ul{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url('../../img/body/loginImg.jpeg');
+    background-image: url('/static/img/body/loginImg.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

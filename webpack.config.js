@@ -14,12 +14,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(s[ac]ss|css)$/i,  
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
+                test: /\.(s[ac]ss|css)$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
+                ],
             },
             {
                 test: /\.(js|jsx)$/,
@@ -30,6 +34,12 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+
             },
         ],
     },

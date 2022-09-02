@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import DropDown from "../components/DropDown";
+import netflixlogosvg   from "/static/img/header/netflixlogosvg@2x.svg";
+import search           from "/static/img/header/search@2x.svg";
+import giftbox          from "/static/img/header/giftbox@2x.svg" ;
+import notificationbell from "/static/img/header/notificationbell@2x.svg";
+import profileimg       from "/static/img/header/profileimg@2x.png";
 
 function Header() {
   return (
@@ -8,7 +13,7 @@ function Header() {
       <div className='header' style={{ color: "white" }}>
         <div className='header-left'>
           <div className='netflix-logo'>
-          <Link to="/homepage"><img src="../../img/header/netflixlogosvg@2x.svg" title="https://www.netflix.com/tr/" /></Link>
+          <Link to="/homepage"><img src={netflixlogosvg} title="https://www.netflix.com/tr/" /></Link>
           </div>
           <div className='navbar' id="navbar-display">
             <div class="navbar-link-homepage text-white">
@@ -31,16 +36,16 @@ function Header() {
         {/* <!-- * header-left-end  -->*/}
         <div className='header-right'>
           <div class="search-button header-right-display ">
-            <Link to="/search"><img src="../../img/header/search@2x.svg" alt="search-button" /></Link>
+            <Link to="/search"><img src={search} alt="search-button" /></Link>
           </div>
           <div class="giftbox header-right-display">
-            <a href="#"><img src="../../img/header/giftbox@2x.svg" alt="giftbox" /></a>
+            <a href="#"><img src={giftbox} alt="giftbox" /></a>
           </div>
           <div class="notificationbell header-right-display">
-            <a href="#"><img src="../../img/header/notificationbell@2x.svg" alt="notification-bell" /></a>
+            <a href="#"><img src={notificationbell} alt="notification-bell" /></a>
           </div>
           <div class="profile header-right-display">
-            <Link to="/profile"><img src="../../img/header/profileimg@2x.png" alt="profile" /></Link>
+            <Link to="/profile"><img src={profileimg} alt="profile" /></Link>
           </div>
           <div class="down-bar">
             <DropDown />
