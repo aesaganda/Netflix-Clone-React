@@ -1,5 +1,7 @@
 import React from "react";
 import { MovieContext, useContext } from "../context/MovieContext";
+import undefinedIMG from "/static/img/body/question-mark.png";
+
 
 function Card({ movie }) {
   const { setModalOpen, setMovieDetail } = useContext(MovieContext);
@@ -8,7 +10,7 @@ function Card({ movie }) {
   if (movie.poster_path) {
     movieImg = `${process.env.CARD_IMG_BASE_URL}${movie.poster_path}`;
   } else {
-    movieImg = "../img/body/question-mark.png";
+    movieImg = undefinedIMG;
   }
 
   return (
