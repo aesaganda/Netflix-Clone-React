@@ -15,7 +15,7 @@ function ActorInfoPage() {
   const { actorId, actorKnownWorks } = useContext(ActorContext);
   const [ actorInfo, setActorInfo ] = useState({});
 
-  const actorInfoURL = `${baseURL}${actorId}?api_key=${API_KEY}&language=us-US`;
+  const actorInfoURL = `${baseURL}${actorId}?api_key=${process.env.API_KEY}&language=us-US`;
   async function getActor() {
     await axios.get(actorInfoURL)
       .then(response => { setActorInfo(response.data); })
