@@ -6,7 +6,7 @@ function RegisterPage() {
   return (
     <>
       <div className='form-section'>
-        <a className="logo" href="https://www.netflix.com/" target="_blank"><img src={'../static/img/body/netflixLogo.png'}/></a>
+        <a className="logo" href="https://www.netflix.com/" target="_blank"><img src={'/static/img/body/netflixLogo.png'}/></a>
         <FormRegister />
       </div>
     </>
