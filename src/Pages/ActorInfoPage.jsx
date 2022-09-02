@@ -6,15 +6,16 @@ import axios from 'axios';
 import { urlActorMaker } from '../helpers/UrlHelper';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import instagram from '/static/img/body/instagram.png';
+import twitter from '/static/img/body/twitter.png';
 
 const baseURL = "https://api.themoviedb.org/3/person/"
-const key     = "36a5061485b27e94b39f5b1cdc2a97a2"
 
 function ActorInfoPage() {
   const { actorId, actorKnownWorks } = useContext(ActorContext);
   const [ actorInfo, setActorInfo ] = useState({});
 
-  const actorInfoURL = `${baseURL}${actorId}?api_key=${key}&language=us-US`;
+  const actorInfoURL = `${baseURL}${actorId}?api_key=${API_KEY}&language=us-US`;
   async function getActor() {
     await axios.get(actorInfoURL)
       .then(response => { setActorInfo(response.data); })
@@ -47,8 +48,8 @@ function ActorInfoPage() {
                 <img src={profileURL} alt={actorInfo.name} />
               </div>
               <div className="social-media-logo center">
-                <img src='../static/img/body/instagram.png' />
-                <img src='../static/img/body/twitter.png' />
+                <img src={instagram} />
+                <img src={twitter} />
               </div>
               <div className="personal-information">
                 <div className="personal-information-element">

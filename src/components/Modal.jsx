@@ -3,9 +3,12 @@ import axios from "axios";
 import { MovieContext, useContext } from "../context/MovieContext";
 import { successAlert, warningAlert } from "../helpers/AlertHelper";
 import { urlMakerModal } from "../helpers/UrlHelper";
+import likebutton from "../static/img/body/likebutton.png";
+import redLike from "../static/img/body/redLike.png";
+import play from "../static/img/body/play@2x.svg";
 
 function Modal({ setOpenModal, movieDetail }) {
-  const [likeButtonColor, setLikebuttonColor] = useState("../static/img/body/likebutton.png");
+  const [likeButtonColor, setLikebuttonColor] = useState(likebutton);
   const { addListMovie } = useContext(MovieContext);
   const posterURL =  urlMakerModal(movieDetail.poster_path, "");
 
@@ -14,7 +17,7 @@ function Modal({ setOpenModal, movieDetail }) {
       await axios.post(`${process.env.ADD_MOVIE_API_URL}${movieDetail.id}`);
       successAlert("Filminiz Listeye eklendi.");
       addListMovie(movieDetail);
-      setLikebuttonColor("../static/img/body/redLike.png")
+      setLikebuttonColor(redLike)
     } catch (error) {
       error == "AxiosError: Request failed with status code 403"
         ? warningAlert("Lütfen tekrar eklemeye çalışmayınız.")
@@ -74,7 +77,7 @@ function Modal({ setOpenModal, movieDetail }) {
               e.preventDefault();
               window.location.href=`http://netflix.com/`;
               }}>
-            <img src="../static/img/body/play@2x.svg" alt="play" />
+            <img src={play} alt="play" />
             <span>Oynat</span>
           </button>
         </div>
