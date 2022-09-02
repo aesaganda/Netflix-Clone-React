@@ -3,9 +3,9 @@ import axios from "axios";
 import { MovieContext, useContext } from "../context/MovieContext";
 import { successAlert, warningAlert } from "../helpers/AlertHelper";
 import { urlMakerModal } from "../helpers/UrlHelper";
-import likebutton from "../static/img/body/likebutton.png";
-import redLike from "../static/img/body/redLike.png";
-import play from "../static/img/body/play@2x.svg";
+import likebutton from "/static/img/body/likebutton.png";
+import redLike from "/static/img/body/redLike.png";
+import play from "/static/img/body/play@2x.svg";
 
 function Modal({ setOpenModal, movieDetail }) {
   const [likeButtonColor, setLikebuttonColor] = useState(likebutton);
