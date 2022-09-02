@@ -14,6 +14,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
                 test: /\.(s[ac]ss|css)$/i,
                 use: [
                     "style-loader",
