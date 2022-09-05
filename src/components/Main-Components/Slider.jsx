@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./Card";
-import {MovieContext,useContext} from "../context/MovieContext";
+import Card from "../Card";
+import { MovieContext,useContext } from "../../context/MovieContext";
 import Carousel from "better-react-carousel";
 
 function Slider({ data }) {

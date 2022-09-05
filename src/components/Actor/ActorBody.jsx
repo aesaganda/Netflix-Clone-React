@@ -1,6 +1,6 @@
 import React from 'react'
-import ActorCard from '../components/ActorCard';
-import { MovieContext, useContext } from '../context/MovieContext';
+import ActorCard from './ActorCard';
+import { MovieContext, useContext } from '../../context/MovieContext';
 
 function ActorBody() {
  const {actorsInfo} = useContext(MovieContext);

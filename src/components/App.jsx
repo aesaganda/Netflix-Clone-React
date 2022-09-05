@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Modal from "./Modal";
+import Modal from "./Main-Components/Modal";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
@@ -9,10 +9,10 @@ import { ActorContext } from '../context/ActorContext';
 import { ToastContainer } from 'react-toastify';
 import MainRoute from '../routes/MainRoute';
 
-const popularURL = `${process.env.MOVIE_BASE_URL}movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`;
-const topRatedURL = `${process.env.MOVIE_BASE_URL}movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=1`;
-const upComingURL = `${process.env.MOVIE_BASE_URL}movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=1`;
-const nowPlayingURL = `${process.env.MOVIE_BASE_URL}movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+const popularURL = `${process.env.MOVIE_BASE_URL}movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=2`;
+const topRatedURL = `${process.env.MOVIE_BASE_URL}movie/top_rated?api_key=${process.env.API_KEY}&language=en-US&page=2`;
+const upComingURL = `${process.env.MOVIE_BASE_URL}movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=2`;
+const nowPlayingURL = `${process.env.MOVIE_BASE_URL}movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&page=2`;
 const listsMovieURL = `${process.env.MOVIE_BASE_URL}list/8214743?api_key=${process.env.API_KEY}&language=en-US`;
 const actorURL = `${process.env.MOVIE_BASE_URL}person/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`;
 
