@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { successAlert, errorAlert, warningAlert } from "../helpers/AlertHelper";
+import { translateMessage } from "./FirebaseErrorTranslate";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -30,7 +31,7 @@ export const register = async (email, password, name, surname) => {
             return user;
     } catch (error) {
         console.log(error.code);
-        errorAlert(error.message);
+        errorAlert(translateMessage(error.code));
         return false
     }
 }
@@ -43,7 +44,7 @@ export const login = async (email, password) => {
 
     } catch (error) {
         console.log(error.code);
-        errorAlert(error.message);
+        errorAlert(translateMessage(error.code));
         return false;
     }
 }
@@ -53,7 +54,7 @@ export const logout = async () => {
         successAlert("Profilinizden çıkış başarılı.")
     }).catch((error) => {
         console.log(error.code);
-        errorAlert(error.message);
+        errorAlert(translateMessage(error.code));
     });
 }
 
