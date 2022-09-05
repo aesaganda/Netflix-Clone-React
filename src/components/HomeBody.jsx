@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './Slider'
+import Slider from './Main-Components/Slider';
 
 const sliderInfo = [
     { gapSize: 10, rowInfo: 2, movieURL: 0, title: "Filmler, Diziler, TV Showları" },

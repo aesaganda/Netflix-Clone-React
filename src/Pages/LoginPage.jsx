@@ -1,5 +1,5 @@
 import React from 'react'
-import FormLogin from '../components/FormLogin'
+import FormLogin from '../components/Login-Register/FormLogin'
 import Icon from "/static/img/body/netflixLogo.png";
 
 function LoginPage() {

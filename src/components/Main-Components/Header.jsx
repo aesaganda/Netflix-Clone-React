@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import DropDown from "../components/DropDown";
+import DropDown from "./DropDown";
 import netflixlogosvg   from "/static/img/header/netflixlogosvg@2x.svg";
 import search           from "/static/img/header/search@2x.svg";
 import giftbox          from "/static/img/header/giftbox@2x.svg" ;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Modal from "./Modal";
+import Modal from "./Main-Components/Modal";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";

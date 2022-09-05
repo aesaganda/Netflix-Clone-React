@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from "axios";
-import { MovieContext, useContext } from '../context/MovieContext'
-import { successAlert, errorAlert } from "../helpers/AlertHelper";
-import { urlMovieMaker } from '../helpers/UrlHelper';
+import { MovieContext, useContext } from '../../context/MovieContext'
+import { successAlert, errorAlert } from "../../helpers/AlertHelper";
+import { urlMovieMaker } from '../../helpers/UrlHelper';
 
 function ListMovieCard({ movie, item, isButtonActive, cardClassName }) {
     const { deleteMovie, setModalOpen, setMovieDetail } = useContext(MovieContext);

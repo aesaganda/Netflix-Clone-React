@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { logout } from '../helpers/firebase';
-import { useAuth } from "../context/AuthContext";
+import { logout } from '../../helpers/firebase';
+import { useAuth } from "../../context/AuthContext";
 import downarrow      from "/static/img/header/downarrow@2x.svg";
 import user           from "/static/img/header/user.png";
 import movie_series   from "/static/img/header/apps.png";

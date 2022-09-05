@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './Slider'
+import Slider from './Main-Components/Slider';
 import moviename2x from "/static/img/body/moviename@2x.png";
 import play2x from "/static/img/body/play@2x.svg";
 import detail2x from "/static/img/body/detail@2x.svg";

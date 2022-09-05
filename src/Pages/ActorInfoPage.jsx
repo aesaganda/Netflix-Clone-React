@@ -1,11 +1,11 @@
 import React from 'react'
 import { ActorContext, useContext } from '../context/ActorContext';
-import ActorMovieInfoSlider from '../components/ActorMovieInfoSlider';
+import ActorMovieInfoSlider from '../components/Actor/ActorMovieInfoSlider';
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { urlActorMaker } from '../helpers/UrlHelper';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/Main-Components/Header';
+import Footer from '../components/Main-Components/Footer';
 import instagram from '/static/img/body/instagram.png';
 import twitter from '/static/img/body/twitter.png';
 

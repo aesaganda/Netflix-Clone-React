@@ -1,6 +1,6 @@
 import React from 'react'
-import ListMovieCard from '../components/ListMovieCard';
-import { MovieContext, useContext } from '../context/MovieContext';
+import ListMovieCard from './ListMovieCard';
+import { MovieContext, useContext } from '../../context/MovieContext';
 
 function ListBody() {
     const { listsMovie } = useContext(MovieContext);

@@ -9,7 +9,7 @@ function ProfileBody() {
     let lastSignIn;
     const user = auth.currentUser;
     if (user !== null) {
-        console.log(user);
+        
         user.providerData.forEach((profile) => {
         displayName= profile.displayName;
         userEmail = profile.email;

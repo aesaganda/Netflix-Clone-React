@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import SearchBar from './SearchBar'
-import ListMovieCard from '../components/ListMovieCard';
+import ListMovieCard from '../List/ListMovieCard';
 
 function SearchBody() {
     const [query, setQuery] = useState("");

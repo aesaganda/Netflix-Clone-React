@@ -1,7 +1,7 @@
 import React from 'react'
 import Body from "../components/Body";
-import Header from '../components/Header';
-import Footer from "../components/Footer";
+import Header from '../components/Main-Components/Header';
+import Footer from "../components/Main-Components/Footer";
 
 function MoviePage() {
   return (
