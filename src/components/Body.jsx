@@ -6,7 +6,7 @@ import detail2x from "/static/img/body/detail@2x.svg";
 import top10badge2x from "/static/img/body/top10badge@2x.svg";
 
 const sliderInfo = [
-    { gapSize : 1, rowInfo : 1, movieURL: 3, title: "Melih, İzlemeye Devam Et" },
+    { gapSize : 1, rowInfo : 1, movieURL: 3, title: "İzlemeye Devam Et" },
     { gapSize : 1, rowInfo : 1, movieURL: 1, title: "En Çok Oy Alanlar" },
     { gapSize : 1, rowInfo : 1, movieURL: 2, title: "Yakın Zamanda Netflix'te" },
     { gapSize : 1, rowInfo : 1, movieURL: 0, title: "Yeniden İzle" }
