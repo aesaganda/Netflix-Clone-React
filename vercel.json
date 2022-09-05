@@ -1,0 +1,15 @@
+{
+    "routes": [
+      { "src": "/", "dest": "/" },
+      { "src": "/login", "dest": "/login" },
+      { "src": "/register", "dest": "/register" },
+      { "src": "/movies-series", "dest": "/movies-series" },
+      { "src": "/popular-actors", "dest": "/popular-actors" },
+      { "src": "/popular-actors/:actorName", "dest": "/popular-actors/:actorName" },
+      { "src": "/my-list", "dest": "/my-list" },
+      { "src": "/profile", "dest": "/profile" }
+    ],
+    "rewrites":  [
+        {"source": "/(.*)", "destination": "*"}
+      ]
+  }
