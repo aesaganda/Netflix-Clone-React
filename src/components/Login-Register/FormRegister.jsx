@@ -22,6 +22,7 @@ function FormRegister() {
             replace: true
         })
     }
+    let disabled = true;
 
     return (
         <div>
@@ -29,7 +30,7 @@ function FormRegister() {
                 <h1 className="form-title">Kayıt Ol</h1>
                 <div className="form-group">
                     <input className="form-group-input" type="text" required="true" value={email} onChange={e => setEmail(e.target.value)}/>
-                    <label className="form-group-label">Email veya telefon numarası</label>
+                    <label className="form-group-label">Email</label>
                 </div>
                 <div className="form-group">
                     <input className="form-group-input" type="password" required="true" value={password} onChange={e => setPassword(e.target.value)} />
@@ -43,7 +44,11 @@ function FormRegister() {
                     <input className="form-group-input" type="text" required="true" value={surname} onChange={e => setSurname(e.target.value)} />
                     <label className="form-group-label">Soyisim</label>
                 </div>
-                <button disabled={!email || !password || !name || !surname} className="form-sign-in" type="submit">Kayıt Ol</button>
+        {
+            (!email || !password) || (!name || !surname) ? disabled = "a" : disabled = "bg-red"
+        }
+
+                <button disabled={(!email || !password) || (!name || !surname)} className={`form-sign-in ${disabled}`} type="submit">Kayıt Ol</button>
                 <div className="form-secondary-cta">
                     <Link className="form-secondary-cta-text form-secondary-cta-text--need-help" to="/">Yardım ister misin?</Link>
                 </div>

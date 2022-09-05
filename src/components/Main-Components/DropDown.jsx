@@ -51,8 +51,8 @@ function DropDown() {
           <DropdownItem img={actors} text={"Aktör-Aktris"} link={"/popular-actors"} />
           <DropdownItem img={list_check} text={"Listem"} link={"/my-list"} />
           <DropdownItem img={search} text={"Ara"} link={"/search"} />
-          <DropdownItem img={settings} text={"Ayarlar"} link={"/"} />
-          <DropdownItem img={help} text={"Yardım"} link={"/"} />
+          <DropdownItem img={settings} text={"Ayarlar"} link={"/homepage"} />
+          <DropdownItem img={help} text={"Yardım"} link={"/homepage"} />
           <li className='dropdownItem'>
             <img src={logoutvariable}></img>
             <span onClick={handleLogout}>{"Profilden Çıkış"} </span>
