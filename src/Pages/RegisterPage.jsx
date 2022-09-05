@@ -1,5 +1,5 @@
 import React from 'react'
-import FormRegister from '../components/FormRegister'
+import FormRegister from '../components/Login-Register/FormRegister'
 import Icon from '/static/img/body/netflixLogo.png';
 
 function RegisterPage() {
@@ -14,7 +14,3 @@ function RegisterPage() {
 }
 
 export default RegisterPage
-
-
-
-{/* <img src="/static/image.png"/> */}

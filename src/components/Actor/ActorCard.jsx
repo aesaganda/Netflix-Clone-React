@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ActorContext } from "../context/ActorContext";
-import { urlWeb } from "../helpers/UrlHelper";
+import { ActorContext } from "../../context/ActorContext";
+import { urlWeb } from "../../helpers/UrlHelper";
 import profileURL from "/static/img/body/question.png";
 
 function ActorCard({ actor, item }) {

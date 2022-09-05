@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from "react";
-import  { register }  from "../helpers/firebase";
+import  { register }  from "../../helpers/firebase";
 
 function FormRegister() {
     const [email, setEmail] = useState('');

@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ListBody from "../components/ListBody";
+import Header from '../components/Main-Components/Header';
+import Footer from '../components/Main-Components/Footer';
+import ListBody from "../components/List/ListBody";
 
 function MyList() {
 
