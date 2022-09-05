@@ -46,7 +46,8 @@ module.exports = {
     },
     devtool: "eval-cheap-module-source-map",
     plugins: [
-        new HtmlWebpackPlugin({ title: "Netflix Türkiye - TV Programlarını Çevrimiçi İzleyin, Filmleri Çevrimiçi İzleyin", template: path.resolve(__dirname, './public/index.html') }),
+        
+        new HtmlWebpackPlugin({ title: "Netflix Türkiye - TV Programlarını Çevrimiçi İzleyin, Filmleri Çevrimiçi İzleyin", template: path.resolve(__dirname, './public/index.html'), favicon: "./static/img/favicon/favicon.png" }),
         new Dotenv(),
     ],
     devServer: {
