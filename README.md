@@ -25,7 +25,6 @@ Proje dokümanları indirildi.
 VS Code terminal ekranında çalıştırabileceğiniz komutlar:
 ```
 npm install webpack webpack-cli --save-dev
-npm run build
 ```
 
 Proje ayağa kaldırılırken port: 3000 kullanmaktadır. webpack.config.js dosyasından port adresini düzenleyebilirsiniz. Düzenledikten sonra aşağıdaki komutu tekrar çalıştırınız.
@@ -49,6 +48,7 @@ Projenin çalışmasındaki alt yapı webpack ile oluşturulmuştur.
 * CleanWebpackPlugin
 * EnvironmentPlugin
 * UglifyJsPlugin
+* Dotenv
 * style-loader
 * css-loader
 * sass-loader
