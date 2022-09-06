@@ -18,7 +18,9 @@ Projeyi indirmek için aşağıdakileri terminal ekranında yazabilirsiniz.
 mkdir netflix-clone
 cd netflix-clone
 git clone https://github.com/MelihAfsar/Netflix-Clone-React.git
+cd Netflix-Clone-React
 code .
+
 ```
 Proje dokümanları indirildi.
 
@@ -56,7 +58,7 @@ Projenin çalışmasındaki alt yapı webpack ile oluşturulmuştur.
 <hr>
 
 ## Proje Klasör Yapısı :
-![projeKlasor](https://user-images.githubusercontent.com/77414773/187215979-40911f09-07b1-42ad-8303-c095e9c9e86c.png)
+![folder](https://user-images.githubusercontent.com/77414773/188655936-c79b9add-5a32-4cf0-9792-85f30c89b8eb.png)
 
 <hr>
 
@@ -76,6 +78,17 @@ https://user-images.githubusercontent.com/77414773/187234555-b3ce0f44-1e8f-4420-
 
 ### Arama
 https://user-images.githubusercontent.com/77414773/187234612-b4b19180-9f81-4dec-abf1-77c31da65e5f.mp4
+
+### Kayıt Olma ve Giriş yapma
+https://user-images.githubusercontent.com/77414773/188658393-ca5bbdb5-0f75-4ebd-9dd3-5ead45c6bcab.mp4
+
+https://user-images.githubusercontent.com/77414773/188658462-283f4a55-7c2c-495c-ba32-dcbb98c5927a.mp4
+
+### Private Route
+https://user-images.githubusercontent.com/77414773/188659613-1214b023-28d7-409d-b774-a7f02ea4ccad.mp4
+
+
+
 
 
 
